@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Game Webshop | Daan Donders</title>
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">daan.dev</a>
+      <ul class="nav-links">
+        <li><a href="../index.html#projects">Projecten</a></li>
+        <li><a href="../index.html#about">Over mij</a></li>
+        <li><a href="mailto:daandonderss@gmail.com">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="container">
+      <a href="../index.html" class="back-link">&larr; Terug naar overzicht</a>
+      <div class="hero-label">// Project — Blok 4 HvA</div>
+      <h1>Game<br><span style="background:linear-gradient(135deg,#6c63ff,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Webshop</span></h1>
+      <div class="project-meta">
+        <div class="meta-item">
+          <span class="meta-label">Mijn rol</span>
+          <span class="meta-value">Checkout &amp; Payments</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Type</span>
+          <span class="meta-value">Teamproject</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Stack</span>
+          <span class="meta-value">TypeScript · Node.js · MySQL</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Jaar</span>
+          <span class="meta-value">2025</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+    <div class="project-content">
+
+      <article class="project-body">
+
+        <h2>Het project</h2>
+        <p>
+          Een productiewaardige webshop voor games, gebouwd als teamproject in blok 4.
+          De webshop heeft productlijsten, detailpagina's, klant- en journalistreviews,
+          een wishlist, gebruikersregistratie met sessies, paginatie en geautomatiseerde
+          unit tests.
+        </p>
+
+        <h2>Wat ik heb gebouwd</h2>
+        <p>
+          Mijn bijdrage was de volledige checkout- en betalingsstroom, van UI tot backend:
+        </p>
+        <ul>
+          <li><strong>Checkout pagina</strong> — glassmorphism-stijl UI met paarse gradient.</li>
+          <li><strong>Betaalscherm</strong> — betaalformulier gekoppeld aan een derde-partij betaal-API.</li>
+          <li><strong>Email service</strong> — stuurt na aankoop een HTML-bevestigingsmail via de HBO-ICT cloud mail API, met productnaam, prijs en dynamisch transactie-ID.</li>
+          <li><strong>Discount service</strong> — valideert kortingscodes via een externe API, zowel frontend als backend, met eigen interface en controller.</li>
+          <li><strong>Contact pagina's</strong> — layout en formulieren.</li>
+        </ul>
+
+        <div class="callout" style="border-color:rgba(108,99,255,0.3);background:rgba(108,99,255,0.06);">
+          <div class="callout-icon">✉️</div>
+          <p>
+            <strong>De e-mailservice voelt als een echt productiesysteem:</strong> na elke aankoop
+            ontvangt de gebruiker een gepersonaliseerde HTML-mail met naam, product, prijs
+            en een uniek transactie-ID.
+          </p>
+        </div>
+
+        <h2>Grootste uitdaging</h2>
+        <p>
+          De CI/CD pipeline brak omdat de <code style="font-family:var(--mono);font-size:0.85em;color:var(--accent-2);">DiscountService</code> op de API-kant
+          Web Components gebruikte (<code style="font-family:var(--mono);font-size:0.85em;color:var(--accent-2);">HTMLElement</code>), wat niet bestaat
+          in een Node.js-omgeving. Door bewust onderscheid te maken tussen wat in een
+          browser werkt en wat in Node.js, loste ik dit op door de web component-imports
+          uit de API-kant te verwijderen.
+        </p>
+        <p>
+          Dit leerde me hoe kwetsbaar een CI/CD pipeline kan zijn voor omgevingsverschillen —
+          en hoe je dat debugt.
+        </p>
+
+        <h2>Pipeline — mijn bijdrage</h2>
+        <div class="pipeline">
+          <div class="pipeline-step">
+            <div class="step-icon">🛒</div>
+            <div class="step-info">
+              <strong>Checkout pagina</strong>
+              <span>HTML/CSS — glassmorphism UI</span>
+            </div>
+          </div>
+          <div class="pipeline-step">
+            <div class="step-icon">🏷️</div>
+            <div class="step-info">
+              <strong>Discount service</strong>
+              <span>Kortingscode validatie via externe API</span>
+            </div>
+          </div>
+          <div class="pipeline-step">
+            <div class="step-icon">💳</div>
+            <div class="step-info">
+              <strong>Betaal-API koppeling</strong>
+              <span>Derde-partij transactieverwerking</span>
+            </div>
+          </div>
+          <div class="pipeline-step">
+            <div class="step-icon">✉️</div>
+            <div class="step-info">
+              <strong>Email service</strong>
+              <span>HBO-ICT cloud mail API — bevestigingsmail</span>
+            </div>
+          </div>
+        </div>
+
+        <h2>Wat ik heb geleerd</h2>
+        <ul>
+          <li>Externe APIs aanroepen vanuit zowel frontend als backend (betaal-API, mail-API, kortingscode-API).</li>
+          <li>CI/CD pipelines debuggen — onderscheid maken tussen browser- en Node.js-omgeving.</li>
+          <li>Interfaces en services netjes scheiden (<code style="font-family:var(--mono);font-size:0.85em;color:var(--accent-2);">IDiscountService</code>, <code style="font-family:var(--mono);font-size:0.85em;color:var(--accent-2);">IEmailService</code>).</li>
+          <li>Werken met feature branches en merge requests in een team.</li>
+          <li>Try/catch-afhandeling bij onbetrouwbare externe API-aanroepen.</li>
+        </ul>
+
+      </article>
+
+      <aside class="project-sidebar">
+
+        <div class="sidebar-card">
+          <h4>Tech stack</h4>
+          <ul class="tech-stack-list">
+            <li><span class="tech-icon">🟦</span><span class="tech-name">TypeScript</span></li>
+            <li><span class="tech-icon">🟢</span><span class="tech-name">Node.js</span><span class="tech-desc">backend</span></li>
+            <li><span class="tech-icon">⚡</span><span class="tech-name">Express.js</span><span class="tech-desc">API</span></li>
+            <li><span class="tech-icon">🌐</span><span class="tech-name">Lit</span><span class="tech-desc">web components</span></li>
+            <li><span class="tech-icon">⚙️</span><span class="tech-name">Vite / esbuild</span></li>
+            <li><span class="tech-icon">🗄️</span><span class="tech-name">MySQL</span><span class="tech-desc">database</span></li>
+            <li><span class="tech-icon">🧪</span><span class="tech-name">Vitest</span><span class="tech-desc">unit tests</span></li>
+            <li><span class="tech-icon">🚀</span><span class="tech-name">GitLab CI/CD</span></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-card">
+          <h4>Skills aangetoond</h4>
+          <div class="skill-badges">
+            <span class="skill-badge">API integratie</span>
+            <span class="skill-badge">CI/CD debugging</span>
+            <span class="skill-badge">Service interfaces</span>
+            <span class="skill-badge">Feature branches</span>
+            <span class="skill-badge">E-commerce flow</span>
+            <span class="skill-badge">TypeScript</span>
+            <span class="skill-badge">Full-stack</span>
+          </div>
+        </div>
+
+        <div class="sidebar-card">
+          <h4>Mijn branches</h4>
+          <ul class="lesson-list">
+            <li>CheckOut</li>
+            <li>betalen</li>
+            <li>email</li>
+            <li>discount</li>
+            <li>contact</li>
+          </ul>
+        </div>
+
+      </aside>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <p>Built by Daan Donders &mdash; 2025</p>
+    </div>
+  </footer>
+
+</body>
+</html>
