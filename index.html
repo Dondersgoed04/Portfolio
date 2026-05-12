@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio — Daan Donders</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-inner">
+      <span class="nav-logo">Daan Donders</span>
+      <ul class="nav-links">
+        <li><a href="#projects">Projecten</a></li>
+        <li><a href="#about">Over mij</a></li>
+        <li><a href="mailto:daandonderss@gmail.com">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-label">// Portfolio</div>
+      <h1>Hoi, ik ben <span>Daan Donders</span></h1>
+      <p class="hero-subtitle">
+      Software Engineering student aan de HvA met een passie voor AI en technologie die er echt toe doet.      </p>
+      <div class="hero-cta">
+        <a href="#projects" class="btn btn-primary">Bekijk mijn werk &darr;</a>
+        <a href="mailto:daandonderss@gmail.com" class="btn btn-ghost">Contact opnemen</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="section" id="projects">
+    <div class="container">
+      <div class="projects-header">
+        <div class="label">// Projecten</div>
+        <h2>Wat ik heb gebouwd</h2>
+      </div>
+
+      <div class="projects-grid">
+
+        <!-- Dark Tech card -->
+        <a href="projects/dark-tech.html" class="project-card">
+          <div class="card-thumb">
+            <div class="card-thumb-placeholder">📸</div>
+          </div>
+          <div class="card-body">
+            <div class="card-role">AI Engineer</div>
+            <h3>Dark Tech — AI Photobooth</h3>
+            <p>
+              Een interactieve installatie die AI inzet om gezichten te transformeren
+              én tegelijk de verborgen waterkost van AI zichtbaar maakt.
+            </p>
+            <div class="card-tags">
+              <span class="tag">Python</span>
+              <span class="tag">Stable Diffusion</span>
+              <span class="tag">PyTorch</span>
+              <span class="tag">OpenCV</span>
+            </div>
+            <span class="card-link">Bekijk project &rarr;</span>
+          </div>
+        </a>
+
+        <!-- Placeholder card — voeg later meer toe -->
+        <div class="project-card" style="opacity:0.35; pointer-events:none;">
+          <div class="card-thumb">
+            <div class="card-thumb-placeholder">🔜</div>
+          </div>
+          <div class="card-body">
+            <div class="card-role">Coming soon</div>
+            <h3>Volgend project</h3>
+            <p>Hier komt jouw volgende project. Blijf bouwen!</p>
+            <div class="card-tags">
+              <span class="tag">???</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-text">
+          <div class="label mono" style="font-size:0.75rem;color:var(--accent);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:0.5rem;">// Over mij</div>
+          <h2 style="margin-bottom:1.5rem;">AI, code<br>en maatschappelijke impact</h2>
+          <p>
+            Ik ben Daan, Software Engineering student aan de Hogeschool van Amsterdam, met een
+            drive voor AI, maatschappelijke impact en verantwoorde innovatie. Momenteel verdiep
+            ik mij in AI en onderzoek ik hoe je de ethische kant ervan zichtbaar en tastbaar
+            kunt maken, onder andere via Dark Tech Studio.
+          </p>
+          <p>
+            Voordat ik ging studeren werkte ik als duikinstructeur op een liveaboard in
+            Australië, deed ik vrijwilligerswerk bij een marien conservatieproject op de Gili
+            Eilanden in Indonesië en reisde ik door Nieuw-Zeeland.
+          </p>
+          <p>
+            In mijn vrije tijd doe ik aan Japanse Jiu-Jitsu, speel ik saxofoon en duik ik nog
+            steeds wanneer ik de kans krijg.
+          </p>
+        </div>
+        <div>
+          <h3 style="margin-bottom:1rem;font-size:0.9rem;color:var(--text-muted);font-family:var(--mono);text-transform:uppercase;letter-spacing:0.1em;">Tech stack</h3>
+          <ul class="skills-list">
+            <li>Python</li>
+            <li>Java</li>
+            <li>JavaScript</li>
+            <li>HTML / CSS</li>
+            <li>SQL</li>
+            <li>Git / GitHub</li>
+            <li>PyTorch / CUDA</li>
+            <li>OpenCV</li>
+            <li>HuggingFace</li>
+            <li>Stable Diffusion</li>
+            <li>Pillow / PIL</li>
+            <li>Spring Boot</li>
+            <li>Docker</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p>Built by Daan Donders &mdash; 2025</p>
+    </div>
+  </footer>
+
+</body>
+</html>

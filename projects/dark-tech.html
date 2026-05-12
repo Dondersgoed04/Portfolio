@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dark Tech — AI Photobooth | Daan Donders</title>
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">daan.dev</a>
+      <ul class="nav-links">
+        <li><a href="../index.html#projects">Projecten</a></li>
+        <li><a href="../index.html#about">Over mij</a></li>
+        <li><a href="mailto:daandonderss@gmail.com">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="container">
+      <a href="../index.html" class="back-link">&larr; Terug naar overzicht</a>
+
+      <div class="hero-label">// Project</div>
+      <h1>Dark Tech<br><span style="background:linear-gradient(135deg,#6c63ff,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">AI Photobooth</span></h1>
+
+      <div class="project-meta">
+        <div class="meta-item">
+          <span class="meta-label">Mijn rol</span>
+          <span class="meta-value">AI Engineer</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Type</span>
+          <span class="meta-value">Interactieve installatie</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Context</span>
+          <span class="meta-value">Dark Tech (groepsproject)</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Jaar</span>
+          <span class="meta-value">2025</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN CONTENT -->
+  <div class="container">
+    <div class="project-content">
+
+      <!-- LEFT: Body -->
+      <article class="project-body">
+
+        <h2>Het concept</h2>
+        <p>
+          Dark Tech is een fysieke installatie in de vorm van een photobooth. Een gebruiker neemt
+          een foto, waarna AI het gezicht transformeert — bijvoorbeeld ouder maken. Klinkt leuk,
+          maar er zit een addertje onder het gras.
+        </p>
+
+        <div class="callout">
+          <div class="callout-icon">💧</div>
+          <p>
+            <strong>Voordat de AI verwerkt</strong>, ziet de gebruiker hoeveel water deze actie
+            kost. Na bevestiging wordt de foto getransformeerd én wordt er fysiek water weggepompt
+            uit een vissenkom naar een "datacenter" object.
+            <br><br>
+            Doel: de onzichtbare, tastbare impact van AI zichtbaar maken.
+          </p>
+        </div>
+
+        <p>
+          Het project vertaalt een abstract begrip — het waterverbruik van AI-datacenters — naar
+          iets wat mensen letterlijk kunnen zien en horen. Elke AI-transformatie heeft een prijs.
+        </p>
+
+        <h2>Wat ik heb gebouwd</h2>
+        <p>
+          Binnen het team was ik verantwoordelijk voor de volledige AI-pipeline: van webcam
+          tot getransformeerde output foto.
+        </p>
+        <ul>
+          <li><strong>capture.py</strong> — Webcam script dat automatisch een foto maakt en opslaat via OpenCV.</li>
+          <li><strong>utils_image.py</strong> — PIL image loading om foto's in te laden als data voor het AI model.</li>
+          <li><strong>test_model.py</strong> — Stable Diffusion 1.5 lokaal draaien op GPU via de img2img pipeline.</li>
+        </ul>
+
+        <h2>De AI pipeline</h2>
+        <p>De flow van input tot output ziet er als volgt uit:</p>
+
+        <div class="pipeline">
+          <div class="pipeline-step">
+            <div class="step-icon">📷</div>
+            <div class="step-info">
+              <strong>Webcam capture</strong>
+              <span>capture.py &mdash; OpenCV</span>
+            </div>
+          </div>
+          <div class="pipeline-step">
+            <div class="step-icon">🖼️</div>
+            <div class="step-info">
+              <strong>Image loading &amp; preprocessing</strong>
+              <span>utils_image.py &mdash; Pillow / PIL</span>
+            </div>
+          </div>
+          <div class="pipeline-step">
+            <div class="step-icon">🧠</div>
+            <div class="step-info">
+              <strong>AI inference</strong>
+              <span>test_model.py &mdash; Stable Diffusion 1.5 img2img</span>
+            </div>
+          </div>
+          <div class="pipeline-step">
+            <div class="step-icon">✅</div>
+            <div class="step-info">
+              <strong>Getransformeerde output</strong>
+              <span>Opgeslagen PNG &rarr; weergegeven in de installatie</span>
+            </div>
+          </div>
+        </div>
+
+        <h2>Technische keuzes</h2>
+        <p>
+          Een bewuste keuze was om het model <strong>lokaal op een GPU</strong> te draaien in
+          plaats van een externe API te gebruiken. Dit had twee redenen:
+        </p>
+        <ul>
+          <li>Snellere inference zonder netwerklatency voor de realtime installatie.</li>
+          <li>Volledige controle over het model en de parameters (strength, steps, prompt).</li>
+        </ul>
+        <p>
+          Stable Diffusion 1.5 via de HuggingFace <code style="font-family:var(--mono);font-size:0.85em;color:var(--accent-2);">img2img</code> pipeline
+          was de juiste keuze: het behoudt de compositie van de foto en past alleen de stijl
+          en kenmerken aan op basis van de prompt.
+        </p>
+        <p>
+          PyTorch met CUDA zorgde voor GPU-acceleratie, waardoor de inference acceptabel snel was
+          voor een live installatie.
+        </p>
+
+        <h2>Beeldmateriaal</h2>
+        <p>Hieronder input en output van de pipeline.</p>
+
+        <div class="gallery">
+          <div class="gallery-item">
+            <div class="placeholder-img">
+              <div class="icon">📷</div>
+              <div class="caption">Voeg hier een screenshot toe van de webcam input (capture.py output)</div>
+            </div>
+            <div class="gallery-label">Input — webcam foto</div>
+          </div>
+          <div class="gallery-item">
+            <div class="placeholder-img">
+              <div class="icon">🤖</div>
+              <div class="caption">Voeg hier een screenshot toe van de AI-getransformeerde output</div>
+            </div>
+            <div class="gallery-label">Output — Stable Diffusion img2img</div>
+          </div>
+        </div>
+
+        <p style="font-size:0.8rem;color:var(--text-muted);font-family:var(--mono);">
+          💡 Tip: vervang de placeholder-vakken hierboven door echte screenshots.<br>
+          Sla ze op als <code>projects/img/dark-tech-input.jpg</code> en <code>dark-tech-output.jpg</code>
+          en pas de <code>&lt;img&gt;</code> tags in de HTML aan.
+        </p>
+
+        <h2>Wat ik heb geleerd</h2>
+        <ul>
+          <li>Hoe AI werkt onder de motorkap: tensors, inference vs. training, de rol van het model.</li>
+          <li>Waarom GPU's zo veel sneller zijn dan CPU's voor matrix-operaties.</li>
+          <li>Het verschil tussen een lokaal model draaien en een API aanroepen — en wanneer je welke kiest.</li>
+          <li>Hoe je een complete AI pipeline opzet van raw input tot bruikbare output.</li>
+          <li>De onzichtbare infrastructuurkosten van AI (water, energie, hardware).</li>
+        </ul>
+
+      </article>
+
+      <!-- RIGHT: Sidebar -->
+      <aside class="project-sidebar">
+
+        <div class="sidebar-card">
+          <h4>Tech stack</h4>
+          <ul class="tech-stack-list">
+            <li>
+              <span class="tech-icon">🐍</span>
+              <span class="tech-name">Python</span>
+            </li>
+            <li>
+              <span class="tech-icon">📷</span>
+              <span class="tech-name">OpenCV</span>
+              <span class="tech-desc">webcam</span>
+            </li>
+            <li>
+              <span class="tech-icon">🖼️</span>
+              <span class="tech-name">Pillow / PIL</span>
+              <span class="tech-desc">images</span>
+            </li>
+            <li>
+              <span class="tech-icon">🔥</span>
+              <span class="tech-name">PyTorch + CUDA</span>
+              <span class="tech-desc">GPU</span>
+            </li>
+            <li>
+              <span class="tech-icon">🤗</span>
+              <span class="tech-name">Diffusers</span>
+              <span class="tech-desc">HuggingFace</span>
+            </li>
+            <li>
+              <span class="tech-icon">🧠</span>
+              <span class="tech-name">Stable Diffusion 1.5</span>
+              <span class="tech-desc">AI model</span>
+            </li>
+            <li>
+              <span class="tech-icon">⚡</span>
+              <span class="tech-name">Transformers</span>
+            </li>
+            <li>
+              <span class="tech-icon">🚀</span>
+              <span class="tech-name">Accelerate</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="sidebar-card">
+          <h4>Skills aangetoond</h4>
+          <div class="skill-badges">
+            <span class="skill-badge">Lokale AI</span>
+            <span class="skill-badge">Computer Vision</span>
+            <span class="skill-badge">GPU computing</span>
+            <span class="skill-badge">Image processing</span>
+            <span class="skill-badge">ML pipelines</span>
+            <span class="skill-badge">Python scripting</span>
+            <span class="skill-badge">HuggingFace</span>
+            <span class="skill-badge">AI ethiek</span>
+          </div>
+        </div>
+
+        <div class="sidebar-card">
+          <h4>Key takeaways</h4>
+          <ul class="lesson-list">
+            <li>Lokaal vs. API afwegen op basis van latency en controle</li>
+            <li>GPU inference begrijpen (CUDA, tensors)</li>
+            <li>img2img pipeline configureren</li>
+            <li>AI pipeline van webcam tot output bouwen</li>
+            <li>Ethische kant van AI zichtbaar maken</li>
+          </ul>
+        </div>
+
+      </aside>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p>Built by Daan Donders &mdash; 2025</p>
+    </div>
+  </footer>
+
+</body>
+</html>
