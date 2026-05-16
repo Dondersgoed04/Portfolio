@@ -25,12 +25,12 @@
   <section class="page-hero">
     <div class="container">
       <a href="../index.html" class="back-link">&larr; Terug naar overzicht</a>
-      <div class="hero-label">// Solo project — 2025</div>
+      <div class="hero-label">// Solo project , 2025</div>
       <h1>Real-Time<br><span style="background:linear-gradient(135deg,#6c63ff,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Mask Detection</span></h1>
       <div class="project-meta">
         <div class="meta-item">
           <span class="meta-label">Mijn rol</span>
-          <span class="meta-value">Solo — volledig zelfgebouwd</span>
+          <span class="meta-value">Solo , volledig zelfgebouwd</span>
         </div>
         <div class="meta-item">
           <span class="meta-label">Type</span>
@@ -56,7 +56,7 @@
         <h2>Het project</h2>
         <p>
           Een realtime systeem dat via een Android-telefoon als webcam herkent of iemand
-          een mondkapje draagt, het fout draagt, of geen mondkapje heeft — drie klassen,
+          een mondkapje draagt, het fout draagt, of geen mondkapje heeft , drie klassen,
           96.7% accuracy, volledig van scratch gebouwd zonder voorgetrainde modellen.
         </p>
         <p>
@@ -77,7 +77,7 @@
             <div class="step-icon">👤</div>
             <div class="step-info">
               <strong>Face detection</strong>
-              <span>OpenCV Haar Cascade — gezicht uitsnijden</span>
+              <span>OpenCV Haar Cascade , gezicht uitsnijden</span>
             </div>
           </div>
           <div class="pipeline-step">
@@ -91,14 +91,14 @@
             <div class="step-icon">🧠</div>
             <div class="step-info">
               <strong>CNN inference op GPU</strong>
-              <span>Zelfgebouwd netwerk — RTX 4050, CUDA</span>
+              <span>Zelfgebouwd netwerk , RTX 4050, CUDA</span>
             </div>
           </div>
           <div class="pipeline-step">
             <div class="step-icon">✅</div>
             <div class="step-info">
               <strong>Realtime output</strong>
-              <span>With mask / Without mask / Incorrect — label + confidence op frame</span>
+              <span>With mask / Without mask / Incorrect , label + confidence op frame</span>
             </div>
           </div>
         </div>
@@ -107,38 +107,38 @@
         <div class="gallery" style="grid-template-columns:1fr;">
           <div class="gallery-item">
             <img src="img/fotoresultaat.png" alt="Resultaat mask detection" />
-            <div class="gallery-label">Realtime detectie — eindresultaat</div>
+            <div class="gallery-label">Realtime detectie , eindresultaat</div>
           </div>
         </div>
 
         <h2>Realtime output</h2>
-        <p>Het systeem in actie — links met mondkapje, rechts zonder.</p>
+        <p>Het systeem in actie , links met mondkapje, rechts zonder.</p>
         <div class="gallery">
           <div class="gallery-item">
             <img src="img/mondkapje.png" alt="With mask detectie" />
-            <div class="gallery-label">With mask — correct gedragen</div>
+            <div class="gallery-label">With mask , correct gedragen</div>
           </div>
           <div class="gallery-item">
             <img src="img/nomask.png" alt="No mask detectie" />
-            <div class="gallery-label">Without mask — geen mondkapje</div>
+            <div class="gallery-label">Without mask , geen mondkapje</div>
           </div>
         </div>
 
         <h2>Trainingsresultaten</h2>
-        <p>Van 74% accuracy in epoch 1 naar 96.7% in epoch 27 — over 30 epochs op een RTX 4050.</p>
+        <p>Van 74% accuracy in epoch 1 naar 96.7% in epoch 27 , over 30 epochs op een RTX 4050.</p>
 
         <div class="gallery" style="grid-template-columns:1fr;">
           <div class="gallery-item">
-            <img src="img/foto1resultaatCNN.webp" alt="Training start — dataset info en epoch 1" />
-            <div class="gallery-label">Dataset laden &amp; start training — epoch 1 (74.0% → 86.6%)</div>
+            <img src="img/foto1resultaatCNN.webp" alt="Training start , dataset info en epoch 1" />
+            <div class="gallery-label">Dataset laden &amp; start training , epoch 1 (74.0% → 86.6%)</div>
           </div>
           <div class="gallery-item">
             <img src="img/foto2resultaattCNN.webp" alt="Trainingsverloop epochs 1-26" />
-            <div class="gallery-label">Trainingsverloop — epochs 1–26, accuracy stijgt naar 96.2%</div>
+            <div class="gallery-label">Trainingsverloop , epochs 1–26, accuracy stijgt naar 96.2%</div>
           </div>
           <div class="gallery-item">
             <img src="img/foto3resultaatCNN.webp" alt="Finale epochs en beste model 96.7%" />
-            <div class="gallery-label">Finale epochs — beste model opgeslagen op 96.7% val accuracy</div>
+            <div class="gallery-label">Finale epochs , beste model opgeslagen op 96.7% val accuracy</div>
           </div>
         </div>
 
@@ -146,8 +146,8 @@
 
         <p><strong>Twee complete systemen gebouwd, bewust gekozen welke te gebruiken</strong></p>
         <p>
-          Eerst een YOLO-stijl objectdetector gebouwd van scratch — grid-gebaseerde detectie,
-          drie-component loss, NMS — en ontdekt dat die aanpak 10&times; meer data nodig heeft
+          Eerst een YOLO-stijl objectdetector gebouwd van scratch , grid-gebaseerde detectie,
+          drie-component loss, NMS , en ontdekt dat die aanpak 10&times; meer data nodig heeft
           dan beschikbaar was. Vervolgens bewust overgestapt op face cascade + classifier, wat
           met 14.535 afbeeldingen wél generaliseerde. De keuze tussen architecturen op basis
           van data is wat ervaren ML-engineers doen.
@@ -169,15 +169,15 @@
 
         <p><strong>Non-Maximum Suppression handmatig uitgeschreven</strong></p>
         <p>
-          IoU-berekening, confidence-drempel en overlap-filtering volledig zelfgeschreven —
+          IoU-berekening, confidence-drempel en overlap-filtering volledig zelfgeschreven ,
           zit in de meeste frameworks achter één functieaanroep.
         </p>
 
         <p><strong>Domain shift herkend en opgelost</strong></p>
         <p>
           De eerste dataset (Aziatische motorhelmen) haalde 81% accuracy in evaluatie maar
-          werkte niet in de praktijk. Het probleem zelf diagnosticeren als domain shift —
-          en niet alleen "het werkt niet" constateren — is een vaardigheid die verder gaat
+          werkte niet in de praktijk. Het probleem zelf diagnosticeren als domain shift ,
+          en niet alleen "het werkt niet" constateren , is een vaardigheid die verder gaat
           dan de gemiddelde ML-cursus.
         </p>
 
@@ -185,23 +185,23 @@
           <div class="callout-icon">🏆</div>
           <p>
             <strong>96.7% accuracy</strong> op 14.535 afbeeldingen met een netwerk van
-            101.858 parameters — volledig zelfgebouwd, elke laag, elke loss, elke
+            101.858 parameters , volledig zelfgebouwd, elke laag, elke loss, elke
             trainingsloop handmatig geïmplementeerd.
           </p>
         </div>
 
         <h2>Uitdagingen</h2>
         <ul>
-          <li>Laptop webcam niet toegankelijk via OpenCV op Windows — opgelost via IP Webcam stream over wifi.</li>
-          <li>Eerste datasets hadden domain shift — Aziatische helmen generaliseerden niet naar eigen situatie.</li>
-          <li>Zelfgebouwde YOLO-detector overfitte bij 397 afbeeldingen — bewust overgestapt op classifier aanpak.</li>
+          <li>Laptop webcam niet toegankelijk via OpenCV op Windows , opgelost via IP Webcam stream over wifi.</li>
+          <li>Eerste datasets hadden domain shift , Aziatische helmen generaliseerden niet naar eigen situatie.</li>
+          <li>Zelfgebouwde YOLO-detector overfitte bij 397 afbeeldingen , bewust overgestapt op classifier aanpak.</li>
         </ul>
 
         <h2>Wat ik heb geleerd</h2>
         <ul>
           <li>Hoe convoluties, pooling en BatchNorm samenwerken in een CNN.</li>
           <li>Hoe backpropagation, CrossEntropyLoss en Adam optimizer het netwerk laten leren.</li>
-          <li>Wat overfitting is en hoe je het voorkomt — en wanneer je architectuurkeuzes aanpast aan je data.</li>
+          <li>Wat overfitting is en hoe je het voorkomt , en wanneer je architectuurkeuzes aanpast aan je data.</li>
           <li>Waarom datakwaliteit en diversiteit zwaarder wegen dan modelcomplexiteit.</li>
           <li>Hoe je een volledige ML pipeline bouwt: data laden → trainen → evalueren → realtime inferentie.</li>
         </ul>
