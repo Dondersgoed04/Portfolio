@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Real-Time Mask Detection | Daan Donders</title>
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">daan.dev</a>
+      <ul class="nav-links">
+        <li><a href="../index.html#projects">Projecten</a></li>
+        <li><a href="../index.html#about">Over mij</a></li>
+        <li><a href="mailto:daandonderss@gmail.com">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="container">
+      <a href="../index.html" class="back-link">&larr; Terug naar overzicht</a>
+      <div class="hero-label">// Solo project — 2025</div>
+      <h1>Real-Time<br><span style="background:linear-gradient(135deg,#6c63ff,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Mask Detection</span></h1>
+      <div class="project-meta">
+        <div class="meta-item">
+          <span class="meta-label">Mijn rol</span>
+          <span class="meta-value">Solo — volledig zelfgebouwd</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Type</span>
+          <span class="meta-value">Computer Vision / ML</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Accuracy</span>
+          <span class="meta-value">96.7%</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Dataset</span>
+          <span class="meta-value">14.535 afbeeldingen</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+    <div class="project-content">
+
+      <article class="project-body">
+
+        <h2>Het project</h2>
+        <p>
+          Een realtime systeem dat via een telefoon als webcam herkent of iemand een
+          mondkapje draagt, het fout draagt, of geen mondkapje heeft. Het systeem
+          detecteert eerst het gezicht via OpenCV en classificeert de crop vervolgens
+          met een zelfgebouwd Convolutional Neural Network.
+        </p>
+        <p>
+          Belangrijk: alles is van scratch gebouwd — geen YOLOv8, geen voorgetraind model,
+          geen framework dat de moeilijke delen verbergt. Elke laag, elke loss berekening,
+          elke trainingsloop is handmatig geïmplementeerd.
+        </p>
+
+        <h2>De pipeline</h2>
+        <div class="pipeline">
+          <div class="pipeline-step">
+            <div class="step-icon">📱</div>
+            <div class="step-info">
+              <strong>IP Webcam (Android)</strong>
+              <span>JPEG-frames ophalen via HTTP</span>
+            </div>
+          </div>
+          <div class="pipeline-step">
+            <div class="step-icon">👤</div>
+            <div class="step-info">
+              <strong>Face detection</strong>
+              <span>OpenCV Haar cascade — gezicht uitsnijden</span>
+            </div>
+          </div>
+          <div class="pipeline-step">
+            <div class="step-icon">🔢</div>
+            <div class="step-info">
+              <strong>Preprocessing</strong>
+              <span>Crop → tensor → normalisatie</span>
+            </div>
+          </div>
+          <div class="pipeline-step">
+            <div class="step-icon">🧠</div>
+            <div class="step-info">
+              <strong>CNN inference (GPU)</strong>
+              <span>Zelfgebouwd netwerk op RTX 4050</span>
+            </div>
+          </div>
+          <div class="pipeline-step">
+            <div class="step-icon">🎯</div>
+            <div class="step-info">
+              <strong>Non-Maximum Suppression</strong>
+              <span>Zelfgeschreven NMS — overlappende boxes filteren</span>
+            </div>
+          </div>
+          <div class="pipeline-step">
+            <div class="step-icon">✅</div>
+            <div class="step-info">
+              <strong>Realtime output</strong>
+              <span>Mask / No mask / Incorrect — getekend op het frame</span>
+            </div>
+          </div>
+        </div>
+
+        <h2>Wat maakt dit technisch zwaar</h2>
+
+        <p><strong>YOLO-stijl detection loss van scratch</strong></p>
+        <p>
+          De meeste ML-cursussen geven je een loss function kant-en-klaar mee. Hier is die
+          zelf geïmplementeerd met drie aparte componenten: objectness loss, class loss en
+          box regression loss — inclusief de sqrt-trick voor kleine bounding boxes en
+          gewogen &lambda;-termen zoals in het originele YOLO-paper.
+        </p>
+
+        <p><strong>Grid-based objectdetectie</strong></p>
+        <p>
+          YOLO-annotaties omzetten naar een [8&times;8&times;6] grid tensor, inclusief
+          cel-toewijzing en genormaliseerde offset-coördinaten. Dit is hoe YOLO intern werkt
+          — normaal verborgen achter een library.
+        </p>
+
+        <p><strong>Non-Maximum Suppression zelfgeschreven</strong></p>
+        <p>
+          Het NMS-algoritme dat overlappende bounding boxes filtert op IoU zit in de meeste
+          frameworks achter één functieaanroep. Hier volledig handmatig uitgeschreven.
+        </p>
+
+        <p><strong>Domain shift herkend en opgelost</strong></p>
+        <p>
+          De eerste dataset (Aziatische helmen) generaliseerde niet naar de eigen situatie.
+          Het probleem zelf diagnosticeren — en niet alleen "het werkt niet" constateren —
+          is een vaardigheid waar ML-engineers jaren ervaring voor nodig hebben.
+        </p>
+
+        <div class="callout" style="border-color:rgba(108,99,255,0.3);background:rgba(108,99,255,0.06);">
+          <div class="callout-icon">🏆</div>
+          <p>
+            <strong>96.7% accuracy</strong> op 14.535 afbeeldingen, met een netwerk dat
+            volledig van scratch is gebouwd — elke laag, elke loss berekening, elke
+            trainingsloop handmatig geïmplementeerd.
+          </p>
+        </div>
+
+        <h2>Uitdagingen</h2>
+        <ul>
+          <li>Laptop webcam werkte niet met OpenCV — opgelost via IP Webcam op Android.</li>
+          <li>Eerste datasets hadden domain shift — Aziatische helmen generaliseerden niet naar de eigen situatie.</li>
+          <li>Zelfgebouwde detector had te weinig data — opgelost door over te stappen op een betere Kaggle dataset.</li>
+        </ul>
+
+        <h2>Wat ik heb geleerd</h2>
+        <ul>
+          <li>Hoe convoluties werken — filters die over afbeeldingen schuiven en patronen leren herkennen.</li>
+          <li>Hoe een netwerk leert via backpropagation, loss functions en de Adam optimizer.</li>
+          <li>Wat overfitting is en hoe je het voorkomt met dropout, BatchNorm en data augmentatie.</li>
+          <li>Waarom datakwaliteit en diversiteit belangrijker zijn dan architectuur.</li>
+          <li>Hoe je een volledige ML pipeline bouwt: data laden → trainen → evalueren → realtime inferentie.</li>
+        </ul>
+
+      </article>
+
+      <aside class="project-sidebar">
+
+        <div class="sidebar-card">
+          <h4>Tech stack</h4>
+          <ul class="tech-stack-list">
+            <li><span class="tech-icon">🐍</span><span class="tech-name">Python</span></li>
+            <li><span class="tech-icon">🔥</span><span class="tech-name">PyTorch</span><span class="tech-desc">CNN</span></li>
+            <li><span class="tech-icon">⚡</span><span class="tech-name">CUDA</span><span class="tech-desc">RTX 4050</span></li>
+            <li><span class="tech-icon">📷</span><span class="tech-name">OpenCV</span><span class="tech-desc">face detection</span></li>
+            <li><span class="tech-icon">🖼️</span><span class="tech-name">Pillow</span></li>
+            <li><span class="tech-icon">📦</span><span class="tech-name">torchvision</span></li>
+            <li><span class="tech-icon">📱</span><span class="tech-name">IP Webcam</span><span class="tech-desc">Android</span></li>
+            <li><span class="tech-icon">📊</span><span class="tech-name">Kaggle dataset</span><span class="tech-desc">14.535 img</span></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-card">
+          <h4>Skills aangetoond</h4>
+          <div class="skill-badges">
+            <span class="skill-badge">CNN from scratch</span>
+            <span class="skill-badge">YOLO loss</span>
+            <span class="skill-badge">NMS</span>
+            <span class="skill-badge">Backpropagation</span>
+            <span class="skill-badge">Data augmentatie</span>
+            <span class="skill-badge">Domain shift</span>
+            <span class="skill-badge">GPU inference</span>
+            <span class="skill-badge">Realtime CV</span>
+          </div>
+        </div>
+
+        <div class="sidebar-card">
+          <h4>Key takeaways</h4>
+          <ul class="lesson-list">
+            <li>CNN architectuur begrijpen en bouwen</li>
+            <li>YOLO detection loss implementeren</li>
+            <li>NMS zelfschrijven</li>
+            <li>Domain shift diagnosticeren</li>
+            <li>Volledige ML pipeline van data tot inferentie</li>
+          </ul>
+        </div>
+
+      </aside>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <p>Built by Daan Donders &mdash; 2025</p>
+    </div>
+  </footer>
+
+</body>
+</html>
