@@ -151,11 +151,7 @@ flowchart TD
     F -->|te donker / geen gezicht| G[400 Error naar Browser]
     F -->|valid| H[StableDiffusionImg2ImgPipeline RTX 4050 CUDA float16]
 
-    H -->|prompt: elderly/younger strength=0.5 steps=20| I[SD Output]
-    I --> J[face_utils.py InsightFace swap]
-    J -->|inswapper_128.onnx ontbreekt| K[fallback: SD output]
-    J -->|gezicht bewaard| L[Eindresultaat]
-    K --> L
+    H -->|prompt: elderly/younger strength=0.5 steps=20| L[Eindresultaat]
 
     L -->|opslaan| M[AI/output/result.png]
     L -->|base64 encoderen| N[JSON Response imageBase64 + pumpTriggered]
