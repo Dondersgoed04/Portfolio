@@ -8,6 +8,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <script>mermaid.initialize({ startOnLoad: true, theme: 'dark' });</script>
 </head>
 <body>
 
@@ -132,6 +134,40 @@
               <span>Opgeslagen PNG &rarr; weergegeven in de installatie</span>
             </div>
           </div>
+        </div>
+
+        <h2>Architectuurdiagram</h2>
+        <p>De volledige technische architectuur van de installatie:</p>
+        <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1.5rem;overflow-x:auto;margin:1.5rem 0;">
+          <pre class="mermaid">
+flowchart TD
+    A[Gebruiker] -->|klikt capture| B[Browser / Webcam]
+    B -->|canvas naar PNG blob| C[chat.js / api.js]
+    C -->|POST multipart/form-data image + transformation + language| D[Flask app.py localhost:5000]
+
+    D -->|opslaan| E[AI/input/webcam.png]
+    E --> F[validator.py]
+
+    F -->|te donker / geen gezicht| G[400 Error naar Browser]
+    F -->|valid| H[StableDiffusionImg2ImgPipeline RTX 4050 CUDA float16]
+
+    H -->|prompt: elderly/younger strength=0.5 steps=20| I[SD Output]
+    I --> J[face_utils.py InsightFace swap]
+    J -->|inswapper_128.onnx ontbreekt| K[fallback: SD output]
+    J -->|gezicht bewaard| L[Eindresultaat]
+    K --> L
+
+    L -->|opslaan| M[AI/output/result.png]
+    L -->|base64 encoderen| N[JSON Response imageBase64 + pumpTriggered]
+
+    N --> O[pump.py PumpController]
+    O -->|serial.write ON| P[ESP32 COM6]
+    P --> Q[Waterpomp]
+
+    N --> R[Browser]
+    R -->|afbeelding tonen| S[Chat UI]
+    R -->|daalt| T[Watermeter]
+          </pre>
         </div>
 
         <h2>Technische keuzes</h2>
