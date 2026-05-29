@@ -91,7 +91,7 @@
           iets wat mensen letterlijk kunnen zien en horen. Elke AI-transformatie heeft een prijs.
         </p>
 
-        <h2>Wat ik heb gebouwd</h2>
+        <h2>Mijn rol: AI Engineer</h2>
         <p>
           Binnen het team was ik verantwoordelijk voor de volledige AI-pipeline: van webcam
           tot getransformeerde output foto.
@@ -101,6 +101,22 @@
           <li><strong>utils_image.py</strong> , PIL image loading om foto's in te laden als data voor het AI model.</li>
           <li><strong>test_model.py</strong> , Stable Diffusion 1.5 lokaal draaien op GPU via de img2img pipeline.</li>
         </ul>
+
+        <h2>Aanvullend AI onderzoek voor deze studio</h2>
+        <p>
+          Naast de installatie heb ik voor de Dark Tech studio een volledig zelfgebouwd
+          AI-model ontwikkeld: een Convolutional Neural Network dat realtime herkent of
+          iemand een mondkapje draagt. Dit project laat zien hoe AI van scratch werkt,
+          los van voorgetrainde modellen.
+        </p>
+        <a href="mask-detection.html" style="display:flex;align-items:center;gap:1rem;padding:1.25rem;border:1px solid var(--border);border-radius:8px;background:var(--surface);text-decoration:none;color:inherit;transition:border-color 0.2s;margin-top:0.5rem;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--border)'">
+          <div style="flex:1;">
+            <div style="font-family:var(--mono);font-size:0.7rem;color:var(--accent);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.3rem;">Aanvullend project</div>
+            <div style="font-weight:600;margin-bottom:0.3rem;">Real-Time Mask Detection</div>
+            <div style="font-size:0.82rem;color:var(--text-muted);">CNN from scratch, 96.7% accuracy, 14.535 afbeeldingen, PyTorch + CUDA</div>
+          </div>
+          <span style="color:var(--text-muted);font-size:1rem;">&#8594;</span>
+        </a>
 
         <h2>De AI pipeline</h2>
         <p>De flow van input tot output ziet er als volgt uit:</p>
