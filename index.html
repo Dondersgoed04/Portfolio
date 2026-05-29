@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio , Daan Donders</title>
+  <title>Daan Donders — AI Engineer</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -11,251 +11,302 @@
 </head>
 <body>
 
-  <!-- NAV -->
   <nav>
     <div class="nav-inner">
-      <span class="nav-logo">Daan Donders</span>
+      <a href="index.html" class="nav-logo">daan.dev</a>
       <ul class="nav-links">
-        <li><a href="#projects">Projecten</a></li>
-        <li><a href="#about">Over mij</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#about">About</a></li>
         <li><a href="mailto:daandonderss@gmail.com">Contact</a></li>
       </ul>
     </div>
   </nav>
 
-  <!-- HERO -->
   <section class="hero">
-    <div class="container">
-      <div class="hero-label">// Portfolio</div>
-      <h1>Hoi, ik ben <span>Daan Donders</span></h1>
-      <p class="hero-subtitle">
-      Software Engineering student aan de HvA met een passie voor AI en technologie die er echt toe doet.      </p>
-      <div class="hero-cta">
-        <a href="#projects" class="btn btn-primary">Bekijk mijn werk &darr;</a>
-        <a href="mailto:daandonderss@gmail.com" class="btn btn-ghost">Contact opnemen</a>
+    <canvas id="neural-canvas"></canvas>
+    <div class="hero-content">
+      <p class="hero-label">AI Engineer &amp; Software Engineering Student</p>
+      <h1 class="hero-title">
+        Daan<br>
+        <span class="dim">Donders</span>
+      </h1>
+      <p class="hero-desc">
+        I build AI systems from scratch. Neural networks, computer vision,
+        and the infrastructure that makes them run.
+      </p>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-number">96.7%</span>
+          <span class="stat-label">CNN accuracy</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">14.5k</span>
+          <span class="stat-label">Training images</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">SD 1.5</span>
+          <span class="stat-label">Local GPU inference</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">6+</span>
+          <span class="stat-label">Projects shipped</span>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- PROJECTS -->
-  <section class="section" id="projects">
+  <section class="projects-section" id="projects">
     <div class="container">
-      <div class="projects-header">
-        <div class="label">// Projecten</div>
-        <h2>Wat ik heb gebouwd</h2>
-      </div>
+      <p class="section-label">Selected work</p>
 
-      <div class="projects-grid">
+      <div class="project-list">
 
-        <!-- Real-Time Mask Detection -->
-        <a href="projects/mask-detection.html" class="project-card">
-          <div class="card-thumb">
-            <div class="card-thumb-placeholder">🧠</div>
-          </div>
-          <div class="card-body">
-            <div class="card-role">Solo project , Computer Vision / ML</div>
-            <h3>Real-Time Mask Detection</h3>
-            <p>
-              Zelfgebouwd CNN dat realtime herkent of iemand een mondkapje draagt ,
-              96.7% accuracy, YOLO-loss van scratch, NMS handmatig geïmplementeerd.
-            </p>
-            <div class="card-tags">
-              <span class="tag">Python</span>
-              <span class="tag">PyTorch</span>
-              <span class="tag">CNN from scratch</span>
-              <span class="tag">OpenCV</span>
-              <span class="tag">CUDA</span>
+        <a href="projects/mask-detection.html" class="project-row">
+          <span class="project-number">01</span>
+          <div class="project-info">
+            <span class="project-name">Real-Time Mask Detection</span>
+            <div class="project-tags">
+              <span class="project-tag">Python</span>
+              <span class="project-tag">PyTorch</span>
+              <span class="project-tag">CNN from scratch</span>
+              <span class="project-tag">OpenCV</span>
+              <span class="project-tag">CUDA</span>
             </div>
-            <span class="card-link">Bekijk project &rarr;</span>
           </div>
+          <span class="project-meta">Solo &nbsp;&nbsp; 96.7% acc</span>
+          <span class="project-arrow">&#8594;</span>
         </a>
 
-        <!-- Dark Tech card -->
-        <a href="projects/dark-tech.html" class="project-card">
-          <div class="card-thumb">
-            <div class="card-thumb-placeholder">📸</div>
-          </div>
-          <div class="card-body">
-            <div class="card-role">AI Engineer</div>
-            <h3>Dark Tech , Flush the AI</h3>
-            <p>
-              Een interactieve installatie die AI inzet om gezichten te transformeren
-              én tegelijk de verborgen waterkost van AI zichtbaar maakt.
-            </p>
-            <div class="card-tags">
-              <span class="tag">Python</span>
-              <span class="tag">Stable Diffusion</span>
-              <span class="tag">PyTorch</span>
-              <span class="tag">OpenCV</span>
+        <a href="projects/dark-tech.html" class="project-row">
+          <span class="project-number">02</span>
+          <div class="project-info">
+            <span class="project-name">Dark Tech — Flush the AI</span>
+            <div class="project-tags">
+              <span class="project-tag">Stable Diffusion 1.5</span>
+              <span class="project-tag">Python</span>
+              <span class="project-tag">Flask</span>
+              <span class="project-tag">ESP32</span>
             </div>
-            <span class="card-link">Bekijk project &rarr;</span>
           </div>
+          <span class="project-meta">AI Engineer</span>
+          <span class="project-arrow">&#8594;</span>
         </a>
 
-        <!-- Verkiezingsdashboard -->
-        <a href="projects/verkiezingsdashboard.html" class="project-card">
-          <div class="card-thumb">
-            <div class="card-thumb-placeholder">🗳️</div>
-          </div>
-          <div class="card-body">
-            <div class="card-role">Teamproject , Blok 2 HvA</div>
-            <h3>Verkiezingsdashboard</h3>
-            <p>
-              Interactief dashboard dat Nederlandse verkiezingsresultaten visualiseert op
-              een kaart, met partijpagina's en een ingebouwd discussieforum.
-            </p>
-            <div class="card-tags">
-              <span class="tag">Vue 3</span>
-              <span class="tag">TypeScript</span>
-              <span class="tag">Java / Spring Boot</span>
-              <span class="tag">Leaflet</span>
-              <span class="tag">Tailwind CSS</span>
+        <a href="projects/verkiezingsdashboard.html" class="project-row">
+          <span class="project-number">03</span>
+          <div class="project-info">
+            <span class="project-name">Verkiezingsdashboard</span>
+            <div class="project-tags">
+              <span class="project-tag">Vue 3</span>
+              <span class="project-tag">TypeScript</span>
+              <span class="project-tag">Java / Spring Boot</span>
+              <span class="project-tag">Leaflet</span>
             </div>
-            <span class="card-link">Bekijk project &rarr;</span>
           </div>
+          <span class="project-meta">Team</span>
+          <span class="project-arrow">&#8594;</span>
         </a>
 
-        <!-- Game Webshop -->
-        <a href="projects/game-webshop.html" class="project-card">
-          <div class="card-thumb">
-            <div class="card-thumb-placeholder">🎮</div>
-          </div>
-          <div class="card-body">
-            <div class="card-role">Teamproject , Blok 4 HvA</div>
-            <h3>Game Webshop</h3>
-            <p>
-              Productiewaardige webshop voor games met reviews, wishlist, paginatie,
-              sessies en geautomatiseerde unit tests.
-            </p>
-            <div class="card-tags">
-              <span class="tag">TypeScript</span>
-              <span class="tag">Node.js / Express</span>
-              <span class="tag">MySQL</span>
-              <span class="tag">Lit</span>
-              <span class="tag">Vitest</span>
+        <a href="projects/game-webshop.html" class="project-row">
+          <span class="project-number">04</span>
+          <div class="project-info">
+            <span class="project-name">Game Webshop</span>
+            <div class="project-tags">
+              <span class="project-tag">TypeScript</span>
+              <span class="project-tag">Node.js</span>
+              <span class="project-tag">MySQL</span>
+              <span class="project-tag">CI/CD</span>
             </div>
-            <span class="card-link">Bekijk project &rarr;</span>
           </div>
+          <span class="project-meta">Team</span>
+          <span class="project-arrow">&#8594;</span>
         </a>
 
-        <!-- Prison Break Adventure Game -->
-        <div class="project-card">
-          <div class="card-thumb">
-            <div class="card-thumb-placeholder">🔓</div>
-          </div>
-          <div class="card-body">
-            <div class="card-role">Teamproject , Blok 3 HvA</div>
-            <h3>Prison Break Adventure Game</h3>
-            <p>
-              Tekst-gebaseerd avonturenspel met een gevangenis-ontsnappingsthema.
-              20+ interactieve items, meerdere kamers en characters met eigen dialoog.
-            </p>
-            <div class="card-tags">
-              <span class="tag">TypeScript</span>
-              <span class="tag">Node.js / Express</span>
-              <span class="tag">Lit</span>
-              <span class="tag">Vite</span>
+        <div class="project-row">
+          <span class="project-number">05</span>
+          <div class="project-info">
+            <span class="project-name">Prison Break Adventure Game</span>
+            <div class="project-tags">
+              <span class="project-tag">TypeScript</span>
+              <span class="project-tag">Node.js</span>
+              <span class="project-tag">Lit</span>
             </div>
           </div>
+          <span class="project-meta">Team</span>
         </div>
 
-        <!-- Code Exchange -->
-        <div class="project-card">
-          <div class="card-thumb">
-            <div class="card-thumb-placeholder">💬</div>
-          </div>
-          <div class="card-body">
-            <div class="card-role">Full-stack , Blok 2 HvA</div>
-            <h3>Code Exchange</h3>
-            <p>
-              Q&A-platform voor codervragen met registratie, login, rich-text editor
-              en MySQL database , gebouwd met MVC-architectuur.
-            </p>
-            <div class="card-tags">
-              <span class="tag">TypeScript</span>
-              <span class="tag">Node.js</span>
-              <span class="tag">MySQL</span>
-              <span class="tag">TinyMCE</span>
+        <div class="project-row">
+          <span class="project-number">06</span>
+          <div class="project-info">
+            <span class="project-name">Code Exchange</span>
+            <div class="project-tags">
+              <span class="project-tag">TypeScript</span>
+              <span class="project-tag">Node.js</span>
+              <span class="project-tag">MySQL</span>
+              <span class="project-tag">MVC</span>
             </div>
           </div>
+          <span class="project-meta">Solo</span>
         </div>
 
-        <!-- Dokkie -->
-        <div class="project-card">
-          <div class="card-thumb">
-            <div class="card-thumb-placeholder">💸</div>
-          </div>
-          <div class="card-body">
-            <div class="card-role">Solo project , Blok 1 HvA</div>
-            <h3>Dokkie , Kosten splitsen</h3>
-            <p>
-              Eerste project: een web-app om gezamenlijke uitgaven bij te houden en
-              automatisch te berekenen wie hoeveel terugkrijgt.
-            </p>
-            <div class="card-tags">
-              <span class="tag">TypeScript</span>
-              <span class="tag">HTML / CSS</span>
-              <span class="tag">Vite</span>
-              <span class="tag">localStorage</span>
+        <div class="project-row">
+          <span class="project-number">07</span>
+          <div class="project-info">
+            <span class="project-name">Dokkie</span>
+            <div class="project-tags">
+              <span class="project-tag">TypeScript</span>
+              <span class="project-tag">HTML / CSS</span>
+              <span class="project-tag">Vite</span>
             </div>
           </div>
+          <span class="project-meta">Solo &nbsp;&nbsp; Blok 1</span>
         </div>
 
       </div>
     </div>
   </section>
 
-  <!-- ABOUT -->
-  <section class="section" id="about">
+  <section class="about-section" id="about">
     <div class="container">
+      <p class="section-label">About</p>
       <div class="about-grid">
         <div class="about-text">
-          <div class="label mono" style="font-size:0.75rem;color:var(--accent);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:0.5rem;">// Over mij</div>
-          <h2 style="margin-bottom:1.5rem;">AI, code<br>en maatschappelijke impact</h2>
           <p>
-            Ik ben Daan, Software Engineering student aan de Hogeschool van Amsterdam, met een
-            drive voor AI, maatschappelijke impact en verantwoorde innovatie. Momenteel verdiep
-            ik mij in AI en onderzoek ik hoe je de ethische kant ervan zichtbaar en tastbaar
-            kunt maken, onder andere via Dark Tech Studio.
+            Software Engineering student at Hogeschool van Amsterdam,
+            focused on AI and building things that have real impact.
+            Currently studying how to make the ethical side of AI
+            visible and tangible.
           </p>
           <p>
-            Voordat ik ging studeren werkte ik als duikinstructeur op een liveaboard in
-            Australië, deed ik vrijwilligerswerk bij een marien conservatieproject op de Gili
-            Eilanden in Indonesië en reisde ik door Nieuw-Zeeland.
+            Before studying I worked as a diving instructor on a
+            liveaboard in Australia, volunteered at a marine conservation
+            project in the Gili Islands, and travelled through New Zealand.
           </p>
           <p>
-            In mijn vrije tijd doe ik aan Japanse Jiu-Jitsu, speel ik saxofoon en duik ik nog
-            steeds wanneer ik de kans krijg.
+            Outside of code: Japanese Jiu-Jitsu, saxophone, and diving
+            whenever I get the chance.
           </p>
         </div>
-        <div>
-          <h3 style="margin-bottom:1rem;font-size:0.9rem;color:var(--text-muted);font-family:var(--mono);text-transform:uppercase;letter-spacing:0.1em;">Tech stack</h3>
-          <ul class="skills-list">
-            <li>Python</li>
-            <li>Java</li>
-            <li>JavaScript</li>
-            <li>HTML / CSS</li>
-            <li>SQL</li>
-            <li>Git / GitHub</li>
-            <li>PyTorch / CUDA</li>
-            <li>OpenCV</li>
-            <li>HuggingFace</li>
-            <li>Stable Diffusion</li>
-            <li>Pillow / PIL</li>
-            <li>Spring Boot</li>
-            <li>Docker</li>
-          </ul>
+        <div class="skills-grid">
+          <div class="skill-row">
+            <span class="skill-name">Python</span>
+            <span class="skill-type">AI / scripting</span>
+          </div>
+          <div class="skill-row">
+            <span class="skill-name">PyTorch / CUDA</span>
+            <span class="skill-type">deep learning</span>
+          </div>
+          <div class="skill-row">
+            <span class="skill-name">Java / Spring Boot</span>
+            <span class="skill-type">backend</span>
+          </div>
+          <div class="skill-row">
+            <span class="skill-name">TypeScript</span>
+            <span class="skill-type">fullstack</span>
+          </div>
+          <div class="skill-row">
+            <span class="skill-name">Vue 3</span>
+            <span class="skill-type">frontend</span>
+          </div>
+          <div class="skill-row">
+            <span class="skill-name">SQL / MySQL</span>
+            <span class="skill-type">database</span>
+          </div>
+          <div class="skill-row">
+            <span class="skill-name">Docker</span>
+            <span class="skill-type">infrastructure</span>
+          </div>
+          <div class="skill-row">
+            <span class="skill-name">OpenCV / HuggingFace</span>
+            <span class="skill-type">computer vision</span>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer>
     <div class="container">
-      <p>Built by Daan Donders &mdash; 2025</p>
+      <p>Daan Donders &mdash; daandonderss@gmail.com</p>
     </div>
   </footer>
+
+  <script>
+    const canvas = document.getElementById('neural-canvas');
+    const ctx = canvas.getContext('2d');
+
+    let nodes = [];
+    const NODE_COUNT = 60;
+    const MAX_DIST = 160;
+
+    function resize() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+
+    function initNodes() {
+      nodes = [];
+      for (let i = 0; i < NODE_COUNT; i++) {
+        nodes.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          vx: (Math.random() - 0.5) * 0.4,
+          vy: (Math.random() - 0.5) * 0.4,
+          radius: Math.random() * 2 + 1,
+          pulse: Math.random() * Math.PI * 2
+        });
+      }
+    }
+
+    function draw() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      for (let i = 0; i < nodes.length; i++) {
+        for (let j = i + 1; j < nodes.length; j++) {
+          const dx = nodes[i].x - nodes[j].x;
+          const dy = nodes[i].y - nodes[j].y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+
+          if (dist < MAX_DIST) {
+            const alpha = (1 - dist / MAX_DIST) * 0.4;
+            ctx.beginPath();
+            ctx.moveTo(nodes[i].x, nodes[i].y);
+            ctx.lineTo(nodes[j].x, nodes[j].y);
+            ctx.strokeStyle = `rgba(79, 142, 247, ${alpha})`;
+            ctx.lineWidth = 0.5;
+            ctx.stroke();
+          }
+        }
+      }
+
+      for (const node of nodes) {
+        node.pulse += 0.02;
+        const r = node.radius + Math.sin(node.pulse) * 0.5;
+
+        ctx.beginPath();
+        ctx.arc(node.x, node.y, r, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(79, 142, 247, 0.7)';
+        ctx.fill();
+
+        node.x += node.vx;
+        node.y += node.vy;
+
+        if (node.x < 0 || node.x > canvas.width) node.vx *= -1;
+        if (node.y < 0 || node.y > canvas.height) node.vy *= -1;
+      }
+
+      requestAnimationFrame(draw);
+    }
+
+    resize();
+    initNodes();
+    draw();
+
+    window.addEventListener('resize', () => {
+      resize();
+      initNodes();
+    });
+  </script>
 
 </body>
 </html>
