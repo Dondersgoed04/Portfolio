@@ -372,6 +372,10 @@ footer p {
   color: var(--accent);
 }
 
+.page-title-accent {
+  color: var(--accent);
+}
+
 .meta-row {
   display: flex;
   flex-wrap: wrap;

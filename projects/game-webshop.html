@@ -26,7 +26,7 @@
     <div class="container">
       <a href="../index.html" class="back-link">&larr; Terug naar overzicht</a>
       <div class="hero-label">// Project , Blok 4 HvA</div>
-      <h1>Game<br><span style="background:linear-gradient(135deg,#6c63ff,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Webshop</span></h1>
+      <h1>Game<br><span class="page-title-accent">Webshop</span></h1>
       <div class="project-meta">
         <div class="meta-item">
           <span class="meta-label">Mijn rol</span>
@@ -84,8 +84,8 @@
 
         <h2>Grootste uitdaging</h2>
         <p>
-          De CI/CD pipeline brak omdat de <code style="font-family:var(--mono);font-size:0.85em;color:var(--accent-2);">DiscountService</code> op de API-kant
-          Web Components gebruikte (<code style="font-family:var(--mono);font-size:0.85em;color:var(--accent-2);">HTMLElement</code>), wat niet bestaat
+          De CI/CD pipeline brak omdat de <code style="font-family:var(--mono);font-size:0.85em;color:var(--accent);">DiscountService</code> op de API-kant
+          Web Components gebruikte (<code style="font-family:var(--mono);font-size:0.85em;color:var(--accent);">HTMLElement</code>), wat niet bestaat
           in een Node.js-omgeving. Door bewust onderscheid te maken tussen wat in een
           browser werkt en wat in Node.js, loste ik dit op door de web component-imports
           uit de API-kant te verwijderen.
@@ -131,7 +131,7 @@
         <ul>
           <li>Externe APIs aanroepen vanuit zowel frontend als backend (betaal-API, mail-API, kortingscode-API).</li>
           <li>CI/CD pipelines debuggen , onderscheid maken tussen browser- en Node.js-omgeving.</li>
-          <li>Interfaces en services netjes scheiden (<code style="font-family:var(--mono);font-size:0.85em;color:var(--accent-2);">IDiscountService</code>, <code style="font-family:var(--mono);font-size:0.85em;color:var(--accent-2);">IEmailService</code>).</li>
+          <li>Interfaces en services netjes scheiden (<code style="font-family:var(--mono);font-size:0.85em;color:var(--accent);">IDiscountService</code>, <code style="font-family:var(--mono);font-size:0.85em;color:var(--accent);">IEmailService</code>).</li>
           <li>Werken met feature branches en merge requests in een team.</li>
           <li>Try/catch-afhandeling bij onbetrouwbare externe API-aanroepen.</li>
         </ul>
