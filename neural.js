@@ -2,6 +2,7 @@ const canvas = document.getElementById('neural-canvas');
 const ctx = canvas.getContext('2d');
 
 const LAYERS = [4, 6, 8, 6, 4];
+const LAYER_LABELS = ['Input', 'Hidden', 'Hidden', 'Hidden', 'Output'];
 const ACCENT = '79, 142, 247';
 
 let nodes = [];
@@ -124,6 +125,16 @@ function draw() {
     ctx.arc(node.x, node.y, r, 0, Math.PI * 2);
     ctx.fillStyle = `rgba(${ACCENT}, ${0.3 + glow * 0.6})`;
     ctx.fill();
+  }
+
+  // layer labels
+  const layerSpacing = canvas.width / (LAYERS.length + 1);
+  ctx.font = '11px JetBrains Mono, monospace';
+  ctx.textAlign = 'center';
+  for (let l = 0; l < LAYERS.length; l++) {
+    const x = layerSpacing * (l + 1);
+    ctx.fillStyle = `rgba(${ACCENT}, 0.25)`;
+    ctx.fillText(LAYER_LABELS[l], x, canvas.height - 20);
   }
 
   frame++;
