@@ -8,23 +8,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
-  <style>
-    .lang-toggle {
-      font-family: var(--mono);
-      font-size: 0.78rem;
-      color: var(--text-muted);
-      background: none;
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      padding: 0.25rem 0.6rem;
-      cursor: pointer;
-      transition: color 0.2s, border-color 0.2s;
-    }
-    .lang-toggle:hover {
-      color: var(--text);
-      border-color: var(--accent);
-    }
-  </style>
 </head>
 <body>
 
@@ -225,26 +208,7 @@
   </footer>
 
   <script src="neural.js"></script>
-  <script>
-    const toggle = document.getElementById('lang-toggle');
-    let lang = localStorage.getItem('lang') || 'en';
-
-    function applyLang() {
-      document.querySelectorAll('[data-en]').forEach(el => {
-        el.innerHTML = el.getAttribute('data-' + lang);
-      });
-      toggle.textContent = lang === 'en' ? 'NL' : 'EN';
-      document.documentElement.lang = lang;
-      localStorage.setItem('lang', lang);
-    }
-
-    toggle.addEventListener('click', () => {
-      lang = lang === 'en' ? 'nl' : 'en';
-      applyLang();
-    });
-
-    applyLang();
-  </script>
+  <script src="lang.js"></script>
 
 </body>
 </html>
