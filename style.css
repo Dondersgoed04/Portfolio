@@ -146,6 +146,32 @@ nav {
   color: var(--text-muted);
 }
 
+.cv-download {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+  padding: 0.65rem 1.25rem;
+  font-family: var(--mono);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--bg);
+  background: var(--text);
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+
+.cv-download::before {
+  content: '↓';
+  font-size: 1rem;
+}
+
+.cv-download:hover {
+  background: var(--accent);
+  color: #fff;
+}
+
 .hero-desc {
   font-size: 1.05rem;
   color: var(--text-muted);
