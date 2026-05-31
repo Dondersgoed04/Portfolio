@@ -264,6 +264,10 @@ nav {
   color: var(--accent);
 }
 
+.project-row-minor {
+  opacity: 0.45;
+}
+
 .project-number {
   font-family: var(--mono);
   font-size: 0.75rem;
