@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="nl">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,6 +8,23 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    .lang-toggle {
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      background: none;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 0.25rem 0.6rem;
+      cursor: pointer;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .lang-toggle:hover {
+      color: var(--text);
+      border-color: var(--accent);
+    }
+  </style>
 </head>
 <body>
 
@@ -15,9 +32,10 @@
     <div class="nav-inner">
       <a href="index.html" class="nav-logo">daan.dev</a>
       <ul class="nav-links">
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#about">About</a></li>
+        <li><a href="#projects" data-en="Projects" data-nl="Projecten">Projects</a></li>
+        <li><a href="#about" data-en="About" data-nl="Over mij">About</a></li>
         <li><a href="mailto:daandonderss@gmail.com">Contact</a></li>
+        <li><button class="lang-toggle" id="lang-toggle">NL</button></li>
       </ul>
     </div>
   </nav>
@@ -25,20 +43,17 @@
   <section class="hero">
     <canvas id="neural-canvas"></canvas>
     <div class="hero-content">
-      <p class="hero-label">AI Engineer &amp; Software Engineering Student</p>
-      <h1 class="hero-title">
-        Daan Donders
-      </h1>
-      <p class="hero-desc">
-        I build AI systems from scratch. Neural networks, computer vision,
-        and the infrastructure that makes them run.
+      <p class="hero-label" data-en="AI Engineer &amp; Software Engineering Student" data-nl="AI Engineer &amp; Software Engineering Student">AI Engineer &amp; Software Engineering Student</p>
+      <h1 class="hero-title">Daan Donders</h1>
+      <p class="hero-desc" data-en="I build AI systems from scratch. Neural networks, computer vision, and the infrastructure that makes them run." data-nl="Ik bouw AI-systemen van scratch. Neurale netwerken, computer vision en de infrastructuur die ze laat werken.">
+        I build AI systems from scratch. Neural networks, computer vision, and the infrastructure that makes them run.
       </p>
     </div>
   </section>
 
   <section class="projects-section" id="projects">
     <div class="container">
-      <p class="section-label">Selected work</p>
+      <p class="section-label" data-en="Selected work" data-nl="Geselecteerd werk">Selected work</p>
 
       <div class="project-list">
 
@@ -61,7 +76,7 @@
         <a href="projects/dark-tech.html" class="project-row">
           <span class="project-number">02</span>
           <div class="project-info">
-            <span class="project-name">Dark Tech — Flush the AI</span>
+            <span class="project-name">Dark Tech: Flush the AI</span>
             <div class="project-tags">
               <span class="project-tag">Stable Diffusion 1.5</span>
               <span class="project-tag">Python</span>
@@ -140,7 +155,7 @@
               <span class="project-tag">Vite</span>
             </div>
           </div>
-          <span class="project-meta">Solo &nbsp;&nbsp; Blok 1</span>
+          <span class="project-meta">Solo</span>
         </div>
 
       </div>
@@ -149,57 +164,51 @@
 
   <section class="about-section" id="about">
     <div class="container">
-      <p class="section-label">About</p>
+      <p class="section-label" data-en="About" data-nl="Over mij">About</p>
       <div class="about-grid">
         <div class="about-text">
-          <p>
-            Software Engineering student at Hogeschool van Amsterdam,
-            focused on AI and building things that have real impact.
-            Currently studying how to make the ethical side of AI
-            visible and tangible.
+          <p data-en="Software Engineering student at HvA, focused on AI. I'm interested in how these systems actually work: the math, the architecture, the decisions behind them. I build from scratch when I can." data-nl="Software Engineering student aan de HvA, gefocust op AI. Ik ben geïnteresseerd in hoe deze systemen echt werken: de wiskunde, de architectuur, de keuzes erachter. Ik bouw van scratch als ik kan.">
+            Software Engineering student at HvA, focused on AI. I'm interested in how these systems actually work: the math, the architecture, the decisions behind them. I build from scratch when I can.
           </p>
-          <p>
-            Before studying I worked as a diving instructor on a
-            liveaboard in Australia, volunteered at a marine conservation
-            project in the Gili Islands, and travelled through New Zealand.
+          <p data-en="Before code, I spent a year diving in Australia and Indonesia. I'm used to figuring things out in unfamiliar environments." data-nl="Voor het programmeren bracht ik een jaar door met duiken in Australië en Indonesië. Ik ben gewend om dingen uit te zoeken in onbekende omgevingen.">
+            Before code, I spent a year diving in Australia and Indonesia. I'm used to figuring things out in unfamiliar environments.
           </p>
-          <p>
-            Outside of code: Japanese Jiu-Jitsu, saxophone, and diving
-            whenever I get the chance.
+          <p data-en="I also play saxophone and train Japanese Jiu-Jitsu. Discipline outside of code carries over." data-nl="Ik speel saxofoon en train Japans Jiu-Jitsu. Discipline buiten het programmeren straalt door in het werk.">
+            I also play saxophone and train Japanese Jiu-Jitsu. Discipline outside of code carries over.
           </p>
         </div>
         <div class="skills-grid">
           <div class="skill-row">
             <span class="skill-name">Python</span>
-            <span class="skill-type">AI / scripting</span>
+            <span class="skill-type" data-en="AI / scripting" data-nl="AI / scripting">AI / scripting</span>
           </div>
           <div class="skill-row">
             <span class="skill-name">PyTorch / CUDA</span>
-            <span class="skill-type">deep learning</span>
+            <span class="skill-type" data-en="deep learning" data-nl="deep learning">deep learning</span>
           </div>
           <div class="skill-row">
             <span class="skill-name">Java / Spring Boot</span>
-            <span class="skill-type">backend</span>
+            <span class="skill-type" data-en="backend" data-nl="backend">backend</span>
           </div>
           <div class="skill-row">
             <span class="skill-name">TypeScript</span>
-            <span class="skill-type">fullstack</span>
+            <span class="skill-type" data-en="fullstack" data-nl="fullstack">fullstack</span>
           </div>
           <div class="skill-row">
             <span class="skill-name">Vue 3</span>
-            <span class="skill-type">frontend</span>
+            <span class="skill-type" data-en="frontend" data-nl="frontend">frontend</span>
           </div>
           <div class="skill-row">
             <span class="skill-name">SQL / MySQL</span>
-            <span class="skill-type">database</span>
+            <span class="skill-type" data-en="database" data-nl="database">database</span>
           </div>
           <div class="skill-row">
             <span class="skill-name">Docker</span>
-            <span class="skill-type">infrastructure</span>
+            <span class="skill-type" data-en="infrastructure" data-nl="infrastructuur">infrastructure</span>
           </div>
           <div class="skill-row">
             <span class="skill-name">OpenCV / HuggingFace</span>
-            <span class="skill-type">computer vision</span>
+            <span class="skill-type" data-en="computer vision" data-nl="computer vision">computer vision</span>
           </div>
         </div>
       </div>
@@ -213,6 +222,26 @@
   </footer>
 
   <script src="neural.js"></script>
+  <script>
+    const toggle = document.getElementById('lang-toggle');
+    let lang = localStorage.getItem('lang') || 'en';
+
+    function applyLang() {
+      document.querySelectorAll('[data-en]').forEach(el => {
+        el.innerHTML = el.getAttribute('data-' + lang);
+      });
+      toggle.textContent = lang === 'en' ? 'NL' : 'EN';
+      document.documentElement.lang = lang;
+      localStorage.setItem('lang', lang);
+    }
+
+    toggle.addEventListener('click', () => {
+      lang = lang === 'en' ? 'nl' : 'en';
+      applyLang();
+    });
+
+    applyLang();
+  </script>
 
 </body>
 </html>
