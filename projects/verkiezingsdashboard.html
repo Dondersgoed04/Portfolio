@@ -16,8 +16,8 @@
     <div class="nav-inner">
       <a href="../index.html" class="nav-logo">Daan Donders</a>
       <ul class="nav-links">
-        <li><a href="../index.html#projects" data-en="Projects" data-nl="Projecten">Projecten</a></li>
-        <li><a href="../index.html#about" data-en="About" data-nl="Over mij">Over mij</a></li>
+        <li><a href="../index.html#projects" data-en="Projects" data-nl="Projecten">Projects</a></li>
+        <li><a href="../index.html#about" data-en="About" data-nl="Over mij">About</a></li>
         <li><a href="mailto:daandonderss@gmail.com">Contact</a></li>
         <li><button class="lang-toggle" id="lang-toggle">NL</button></li>
       </ul>
@@ -26,24 +26,24 @@
 
   <section class="page-hero">
     <div class="container">
-      <a href="../index.html" class="back-link">&larr; Terug naar overzicht</a>
-      <div class="hero-label">// Project , Blok 2 HvA</div>
+      <a href="../index.html" class="back-link" data-en="&larr; Back to projects" data-nl="&larr; Terug naar overzicht">&larr; Back to projects</a>
+      <div class="hero-label" data-en="// Team project &mdash; HvA Block 2" data-nl="// Teamproject &mdash; HvA Blok 2">// Team project &mdash; HvA Block 2</div>
       <h1>Verkiezings-<br><span class="page-title-accent">dashboard</span></h1>
-      <div class="project-meta">
+      <div class="meta-row">
         <div class="meta-item">
-          <span class="meta-label">Mijn rol</span>
-          <span class="meta-value">Forum developer</span>
+          <span class="meta-label" data-en="My role" data-nl="Mijn rol">My role</span>
+          <span class="meta-value" data-en="Forum developer" data-nl="Forum developer">Forum developer</span>
         </div>
         <div class="meta-item">
-          <span class="meta-label">Type</span>
-          <span class="meta-value">Teamproject</span>
+          <span class="meta-label" data-en="Type" data-nl="Type">Type</span>
+          <span class="meta-value" data-en="Team project" data-nl="Teamproject">Team project</span>
         </div>
         <div class="meta-item">
-          <span class="meta-label">Stack</span>
-          <span class="meta-value">Vue 3 · Java Spring Boot</span>
+          <span class="meta-label" data-en="Stack" data-nl="Stack">Stack</span>
+          <span class="meta-value">Vue 3 &middot; Java Spring Boot</span>
         </div>
         <div class="meta-item">
-          <span class="meta-label">Jaar</span>
+          <span class="meta-label" data-en="Year" data-nl="Jaar">Year</span>
           <span class="meta-value">2025</span>
         </div>
       </div>
@@ -51,137 +51,128 @@
   </section>
 
   <div class="container">
-    <div class="project-content">
+    <div class="project-layout">
 
       <article class="project-body">
 
-        <h2>Het project</h2>
-        <p>
-          Een interactief dashboard dat Nederlandse verkiezingsresultaten visualiseert.
-          Gebruikers zien een kaart van Nederland waarop per stemdistrict de resultaten
-          worden getoond, kunnen partijpagina's bekijken met stemmenverdelingen, en
-          discussiëren op een ingebouwd forum.
+        <h2 data-en="Project goal" data-nl="Projectdoel">Project goal</h2>
+        <p data-en="Build an interactive web application that visualises the results of the Dutch elections. Users can explore a map of the Netherlands showing vote distributions per district, browse party pages with charts, and discuss results on a built-in forum." data-nl="Een interactieve webapplicatie bouwen die de resultaten van de Nederlandse verkiezingen visualiseert. Gebruikers kunnen een kaart van Nederland verkennen met stemmingen per district, partijpagina's bekijken met grafieken, en op een ingebouwd forum discussiëren.">
+          Build an interactive web application that visualises the results of the Dutch elections. Users can explore a map of the Netherlands showing vote distributions per district, browse party pages with charts, and discuss results on a built-in forum.
         </p>
-        <p>
-          Het project combineert een Java Spring Boot backend met een Vue 3 frontend ,
-          de meest geavanceerde stack die we tijdens de opleiding tot nu toe hebben gebruikt.
-          De verkiezingsdata werd aangeleverd als grote XML-bestanden die het team samen
-          inlaadde en verwerkte voor de visualisaties.
+        <p data-en="The election data was delivered as large XML files that the team parsed and processed together into a format suitable for the visualisations. The project used the most advanced stack we had worked with at HvA at that point: Java Spring Boot backend, Vue 3 frontend with TypeScript, and Docker for deployment." data-nl="De verkiezingsdata werd aangeleverd als grote XML-bestanden die het team samen parseerde en verwerkte naar een formaat geschikt voor de visualisaties. Het project gebruikte de meest geavanceerde stack die we op dat moment bij de HvA hadden gebruikt: Java Spring Boot backend, Vue 3 frontend met TypeScript, en Docker voor deployment.">
+          The election data was delivered as large XML files that the team parsed and processed together into a format suitable for the visualisations. The project used the most advanced stack we had worked with at HvA at that point: Java Spring Boot backend, Vue 3 frontend with TypeScript, and Docker for deployment.
         </p>
 
-        <h2>Wat ik heb gebouwd</h2>
-        <p>
-          Mijn bijdrage was het volledige forum, van nul opgebouwd als een samenhangend
-          stuk architectuur:
+        <h2 data-en="My contribution" data-nl="Mijn bijdrage">My contribution</h2>
+        <p data-en="I built the complete forum feature from scratch as a coherent piece of architecture. Not just a single page, but a fully connected module with its own components, data layer, and routing:" data-nl="Ik heb de volledige forumfunctionaliteit van nul opgebouwd als een samenhangend stuk architectuur. Niet zomaar een losse pagina, maar een volledig verbonden module met eigen components, datalagen en routing:">
+          I built the complete forum feature from scratch as a coherent piece of architecture. Not just a single page, but a fully connected module with its own components, data layer, and routing:
         </p>
         <ul>
-          <li><strong>ForumView.vue</strong> , overzichtspagina met sidebar, categorieën en zoekfunctie.</li>
-          <li><strong>PostList.vue</strong> , lijst van berichten met Post- en Reply-interfaces.</li>
-          <li><strong>PostItem.vue</strong> , individueel bericht met klik-navigatie naar detailpagina.</li>
-          <li><strong>PostDetail.vue</strong> , detailpagina voor één specifiek bericht.</li>
-          <li><strong>ReplyItem.vue</strong> , component voor antwoorden onder een bericht.</li>
-          <li><strong>PostRepository &amp; ReplyRepository</strong> , data-ophalen via repository pattern.</li>
-          <li><strong>Forum routes</strong> , geneste navigatie toegevoegd aan de Vue Router.</li>
-          <li>Login- en Registerpagina gestyled (layout en knoppen).</li>
+          <li><strong>ForumView.vue</strong> &mdash; <span data-en="overview page with sidebar, categories, and search" data-nl="overzichtspagina met sidebar, categorieën en zoekfunctie">overview page with sidebar, categories, and search</span></li>
+          <li><strong>PostList.vue</strong> &mdash; <span data-en="list of posts with Post and Reply interfaces" data-nl="lijst van berichten met Post- en Reply-interfaces">list of posts with Post and Reply interfaces</span></li>
+          <li><strong>PostItem.vue</strong> &mdash; <span data-en="individual post card with click-navigation to detail page" data-nl="individueel bericht met klik-navigatie naar detailpagina">individual post card with click-navigation to detail page</span></li>
+          <li><strong>PostDetail.vue</strong> &mdash; <span data-en="detail page for a single post" data-nl="detailpagina voor één specifiek bericht">detail page for a single post</span></li>
+          <li><strong>ReplyItem.vue</strong> &mdash; <span data-en="reply component under a post" data-nl="component voor antwoorden onder een bericht">reply component under a post</span></li>
+          <li><strong>PostRepository &amp; ReplyRepository</strong> &mdash; <span data-en="data fetching via repository pattern" data-nl="data-ophalen via repository pattern">data fetching via repository pattern</span></li>
+          <li><strong data-en="Forum routes" data-nl="Forum routes">Forum routes</strong> &mdash; <span data-en="nested routing added to Vue Router" data-nl="geneste navigatie toegevoegd aan de Vue Router">nested routing added to Vue Router</span></li>
+          <li data-en="Login and Register page styling (layout and buttons)" data-nl="Login- en Registerpagina gestyled (layout en knoppen)">Login and Register page styling (layout and buttons)</li>
         </ul>
 
-        <div class="callout" style="border-color:rgba(108,99,255,0.3);background:rgba(108,99,255,0.06);">
-          <div class="callout-icon">🏗️</div>
+        <div class="callout">
           <p>
-            <strong>Het forum is geen losse pagina</strong> maar een samenhangend stuk architectuur:
-            eigen components, repositories, routes en interfaces , van overzicht tot detailpagina
-            met replies.
+            <strong data-en="The forum is not a loose page" data-nl="Het forum is geen losse pagina">The forum is not a loose page</strong>
+            &mdash;
+            <span data-en="a coherent piece of architecture: its own components, repositories, routes and interfaces, from overview to detail page with replies." data-nl="een samenhangend stuk architectuur: eigen components, repositories, routes en interfaces, van overzicht tot detailpagina met replies.">a coherent piece of architecture: its own components, repositories, routes and interfaces, from overview to detail page with replies.</span>
           </p>
         </div>
 
-        <h2>Componentstructuur forum</h2>
+        <h2 data-en="Forum component structure" data-nl="Componentstructuur forum">Forum component structure</h2>
         <div class="pipeline">
           <div class="pipeline-step">
-            <div class="step-icon">📋</div>
+            <div class="step-icon" style="font-family:var(--mono);font-size:0.7rem;color:var(--accent);">01</div>
             <div class="step-info">
               <strong>ForumView.vue</strong>
-              <span>Overzicht , sidebar, categorieën, zoekfunctie</span>
+              <span data-en="Overview, sidebar, categories, search" data-nl="Overzicht, sidebar, categorieën, zoekfunctie">Overview, sidebar, categories, search</span>
             </div>
           </div>
           <div class="pipeline-step">
-            <div class="step-icon">📄</div>
+            <div class="step-icon" style="font-family:var(--mono);font-size:0.7rem;color:var(--accent);">02</div>
             <div class="step-info">
               <strong>PostList.vue + PostItem.vue</strong>
-              <span>Lijst van berichten met klik-navigatie</span>
+              <span data-en="Post list with click-navigation" data-nl="Lijst van berichten met klik-navigatie">Post list with click-navigation</span>
             </div>
           </div>
           <div class="pipeline-step">
-            <div class="step-icon">🔍</div>
+            <div class="step-icon" style="font-family:var(--mono);font-size:0.7rem;color:var(--accent);">03</div>
             <div class="step-info">
               <strong>PostDetail.vue + ReplyItem.vue</strong>
-              <span>Detailpagina met antwoorden</span>
+              <span data-en="Detail page with replies" data-nl="Detailpagina met antwoorden">Detail page with replies</span>
             </div>
           </div>
           <div class="pipeline-step">
-            <div class="step-icon">🗄️</div>
+            <div class="step-icon" style="font-family:var(--mono);font-size:0.7rem;color:var(--accent);">04</div>
             <div class="step-info">
               <strong>PostRepository + ReplyRepository</strong>
-              <span>Data ophalen via repository pattern</span>
+              <span data-en="Data fetching via repository pattern" data-nl="Data ophalen via repository pattern">Data fetching via repository pattern</span>
             </div>
           </div>
         </div>
 
-        <h2>Grootste uitdaging</h2>
-        <p>
-          De navigatie tussen forumlijst en detailpagina correct opzetten in Vue Router,
-          én tegelijk de Post- en Reply-datastructuur zo opzetten dat de repository pattern
-          aansluit op de Java backend. Elke klik op een bericht moest de juiste post laden
-          via de router, de repository aanroepen en de data correct renderen.
+        <h2 data-en="Biggest challenge" data-nl="Grootste uitdaging">Biggest challenge</h2>
+        <p data-en="Setting up the navigation between the post list and detail page correctly in Vue Router, while simultaneously structuring the Post and Reply data so the repository pattern connects cleanly to the Java backend. Every click on a post had to load the right data via the router, call the repository, and render correctly." data-nl="De navigatie tussen forumlijst en detailpagina correct opzetten in Vue Router, én tegelijk de Post- en Reply-datastructuur zo opzetten dat het repository pattern aansluit op de Java backend. Elke klik op een bericht moest de juiste post laden via de router, de repository aanroepen en de data correct renderen.">
+          Setting up the navigation between the post list and detail page correctly in Vue Router, while simultaneously structuring the Post and Reply data so the repository pattern connects cleanly to the Java backend. Every click on a post had to load the right data via the router, call the repository, and render correctly.
         </p>
 
-        <h2>Wat ik heb geleerd</h2>
+        <h2 data-en="What I learned" data-nl="Wat ik geleerd heb">What I learned</h2>
         <ul>
-          <li>Vue 3 Composition API met TypeScript in een echt teamproject.</li>
-          <li>Component-gebaseerde architectuur , wanneer iets een eigen component verdient.</li>
-          <li>Vue Router instellen voor geneste pagina's (lijst → detail).</li>
-          <li>Repository pattern in de frontend toepassen voor databeheer.</li>
-          <li>Samenwerken via feature branches en merge requests in een groter team.</li>
+          <li data-en="Vue 3 Composition API with TypeScript in a real team project" data-nl="Vue 3 Composition API met TypeScript in een echt teamproject">Vue 3 Composition API with TypeScript in a real team project</li>
+          <li data-en="Component-based architecture: when something deserves its own component" data-nl="Component-gebaseerde architectuur: wanneer iets een eigen component verdient">Component-based architecture: when something deserves its own component</li>
+          <li data-en="Setting up Vue Router for nested pages (list to detail)" data-nl="Vue Router instellen voor geneste pagina's (lijst naar detail)">Setting up Vue Router for nested pages (list to detail)</li>
+          <li data-en="Applying repository pattern in the frontend for data management" data-nl="Repository pattern in de frontend toepassen voor databeheer">Applying repository pattern in the frontend for data management</li>
+          <li data-en="Working with feature branches and merge requests in a larger team" data-nl="Samenwerken via feature branches en merge requests in een groter team">Working with feature branches and merge requests in a larger team</li>
         </ul>
 
       </article>
 
       <aside class="project-sidebar">
 
-        <div class="sidebar-card">
-          <h4>Tech stack</h4>
-          <ul class="tech-stack-list">
-            <li><span class="tech-icon">💚</span><span class="tech-name">Vue 3</span><span class="tech-desc">frontend</span></li>
-            <li><span class="tech-icon">🟦</span><span class="tech-name">TypeScript</span></li>
-            <li><span class="tech-icon">🎨</span><span class="tech-name">Tailwind CSS</span></li>
-            <li><span class="tech-icon">☕</span><span class="tech-name">Java 21</span><span class="tech-desc">backend</span></li>
-            <li><span class="tech-icon">🍃</span><span class="tech-name">Spring Boot</span></li>
-            <li><span class="tech-icon">🗺️</span><span class="tech-name">Leaflet</span><span class="tech-desc">kaarten</span></li>
-            <li><span class="tech-icon">📊</span><span class="tech-name">Highcharts</span><span class="tech-desc">grafieken</span></li>
-            <li><span class="tech-icon">🧪</span><span class="tech-name">Vitest</span></li>
+        <div class="sidebar-block">
+          <h4 data-en="Tech stack" data-nl="Tech stack">Tech stack</h4>
+          <ul class="tech-list">
+            <li>Vue 3 <span data-en="frontend" data-nl="frontend">frontend</span></li>
+            <li>TypeScript</li>
+            <li>Tailwind CSS</li>
+            <li>Java 21 <span data-en="backend" data-nl="backend">backend</span></li>
+            <li>Spring Boot</li>
+            <li>Leaflet <span data-en="maps" data-nl="kaarten">maps</span></li>
+            <li>Highcharts <span data-en="charts" data-nl="grafieken">charts</span></li>
+            <li>Vitest</li>
+            <li>Docker</li>
           </ul>
         </div>
 
-        <div class="sidebar-card">
-          <h4>Skills aangetoond</h4>
-          <div class="skill-badges">
-            <span class="skill-badge">Vue 3</span>
-            <span class="skill-badge">Composition API</span>
-            <span class="skill-badge">Vue Router</span>
-            <span class="skill-badge">Repository pattern</span>
-            <span class="skill-badge">Component architectuur</span>
-            <span class="skill-badge">Teamwerk</span>
-            <span class="skill-badge">Java backend</span>
+        <div class="sidebar-block">
+          <h4 data-en="Skills demonstrated" data-nl="Skills aangetoond">Skills demonstrated</h4>
+          <div class="badge-list">
+            <span class="badge">Vue 3</span>
+            <span class="badge">Composition API</span>
+            <span class="badge">Vue Router</span>
+            <span class="badge">Repository pattern</span>
+            <span class="badge" data-en="Component architecture" data-nl="Component architectuur">Component architecture</span>
+            <span class="badge" data-en="Teamwork" data-nl="Teamwerk">Teamwork</span>
+            <span class="badge">Java backend</span>
+            <span class="badge">XML parsing</span>
           </div>
         </div>
 
-        <div class="sidebar-card">
-          <h4>Key takeaways</h4>
+        <div class="sidebar-block">
+          <h4 data-en="Key takeaways" data-nl="Voornaamste lessen">Key takeaways</h4>
           <ul class="lesson-list">
-            <li>Vue 3 met TypeScript in een teamproject</li>
-            <li>Geneste routing opzetten</li>
-            <li>Repository pattern in frontend</li>
-            <li>Java backend aansturen vanuit Vue</li>
-            <li>Feature branches in een groter team</li>
+            <li data-en="Vue 3 with TypeScript in a team project" data-nl="Vue 3 met TypeScript in een teamproject">Vue 3 with TypeScript in a team project</li>
+            <li data-en="Setting up nested routing" data-nl="Geneste routing opzetten">Setting up nested routing</li>
+            <li data-en="Repository pattern in the frontend" data-nl="Repository pattern in de frontend">Repository pattern in the frontend</li>
+            <li data-en="Driving a Java backend from Vue" data-nl="Java backend aansturen vanuit Vue">Driving a Java backend from Vue</li>
+            <li data-en="Feature branches in a larger team" data-nl="Feature branches in een groter team">Feature branches in a larger team</li>
           </ul>
         </div>
 
@@ -190,8 +181,9 @@
   </div>
 
   <footer>
-    <div class="container">
-      <p>Built by Daan Donders &mdash; 2025</p>
+    <div class="container" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;">
+      <p>Daan Donders &mdash; daandonderss@gmail.com</p>
+      <a href="https://www.linkedin.com/in/daan-donders-1237b7162/" target="_blank" style="font-family:var(--mono);font-size:0.78rem;color:var(--text-muted);transition:color 0.2s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-muted)'">LinkedIn</a>
     </div>
   </footer>
 
