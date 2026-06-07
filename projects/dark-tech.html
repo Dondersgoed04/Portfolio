@@ -57,14 +57,7 @@
 
       <article class="project-body">
 
-        <video controls muted style="width:100%;border-radius:10px;margin-bottom:1rem;border:1px solid var(--border);">
-          <source src="img/videofordarktech.mp4" type="video/mp4" />
-        </video>
-        <video controls muted style="width:100%;border-radius:10px;margin-bottom:2rem;border:1px solid var(--border);">
-          <source src="img/thewholeprojectdarktech.mp4" type="video/mp4" />
-        </video>
-
-        <h2 data-en="The concept" data-nl="Het concept">The concept</h2>
+        <h2 data-en="The project" data-nl="Het project">The project</h2>
         <p data-en="Dark Tech is a physical installation in the form of a photo booth. A user takes a photo, after which AI transforms their face, for example making them look older. Sounds fun, but there is a catch." data-nl="Dark Tech is een fysieke installatie in de vorm van een photobooth. Een gebruiker neemt een foto, waarna AI het gezicht transformeert, bijvoorbeeld ouder maken. Klinkt leuk, maar er zit een addertje onder het gras.">
           Dark Tech is a physical installation in the form of a photo booth. A user takes a photo, after which AI transforms their face, for example making them look older. Sounds fun, but there is a catch.
         </p>
@@ -82,7 +75,15 @@
           The project translates an abstract concept, the water consumption of AI data centers, into something people can literally see and hear. Every AI transformation has a price.
         </p>
 
-        <h2 data-en="My role: AI Engineer" data-nl="Mijn rol: AI Engineer">My role: AI Engineer</h2>
+        <video controls muted style="width:100%;border-radius:10px;margin-top:1.5rem;margin-bottom:0.75rem;border:1px solid var(--border);">
+          <source src="img/videofordarktech.mp4" type="video/mp4" />
+        </video>
+        <video controls muted style="width:100%;border-radius:10px;margin-bottom:2.5rem;border:1px solid var(--border);">
+          <source src="img/thewholeprojectdarktech.mp4" type="video/mp4" />
+        </video>
+
+        <div style="border-top:1px solid var(--border);padding-top:2.5rem;margin-top:0.5rem;">
+        <h2 data-en="What I built" data-nl="Wat ik heb gedaan">What I built</h2>
         <p data-en="I built the complete AI backend for this project, from the first test scripts to the production API that ran during the exhibition. Not all at once, but iteratively: first figure out whether something works, then make it production-ready." data-nl="Ik heb de volledige AI-backend voor dit project gebouwd, van de eerste testscripts tot de productie-API die tijdens de tentoonstelling draaide. Niet alles tegelijk, maar iteratief: eerst uitzoeken of iets werkt, dan productieklaar maken.">
           I built the complete AI backend for this project, from the first test scripts to the production API that ran during the exhibition. Not all at once, but iteratively: first figure out whether something works, then make it production-ready.
         </p>
@@ -104,6 +105,8 @@
           <li><strong>modules/face_utils.py</strong> &mdash; <span data-en="InsightFace integration: face detection and swap_face function." data-nl="InsightFace integratie: face detection en swap_face functie.">InsightFace integration: face detection and swap_face function.</span></li>
           <li><strong>modules/transformations.py</strong> &mdash; <span data-en="SD prompt dictionary for routing transformations (elderly, younger, etc.)." data-nl="SD prompt dictionary voor het routeren van transformaties (elderly, younger, etc.).">SD prompt dictionary for routing transformations (elderly, younger, etc.).</span></li>
         </ul>
+
+        </div>
 
         <h2 data-en="Additional AI research for this studio" data-nl="Aanvullend AI onderzoek voor deze studio">Additional AI research for this studio</h2>
         <p data-en="Alongside the installation I developed a fully self-built AI model for the Dark Tech studio: a Convolutional Neural Network that detects in real time whether someone is wearing a face mask. This project shows how AI works from scratch, independent of pre-trained models." data-nl="Naast de installatie heb ik voor de Dark Tech studio een volledig zelfgebouwd AI-model ontwikkeld: een Convolutional Neural Network dat realtime herkent of iemand een mondkapje draagt. Dit project laat zien hoe AI van scratch werkt, los van voorgetrainde modellen.">
