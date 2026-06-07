@@ -16,8 +16,8 @@
     <div class="nav-inner">
       <a href="../index.html" class="nav-logo">Daan Donders</a>
       <ul class="nav-links">
-        <li><a href="../index.html#projects" data-en="Projects" data-nl="Projecten">Projecten</a></li>
-        <li><a href="../index.html#about" data-en="About" data-nl="Over mij">Over mij</a></li>
+        <li><a href="../index.html#projects" data-en="Projects" data-nl="Projecten">Projects</a></li>
+        <li><a href="../index.html#about" data-en="About" data-nl="Over mij">About</a></li>
         <li><a href="mailto:daandonderss@gmail.com">Contact</a></li>
         <li><button class="lang-toggle" id="lang-toggle">NL</button></li>
       </ul>
@@ -26,16 +26,16 @@
 
   <section class="page-hero">
     <div class="container">
-      <a href="../index.html" class="back-link">&larr; Terug naar overzicht</a>
-      <div class="hero-label">// Solo project , 2025</div>
+      <a href="../index.html" class="back-link" data-en="&larr; Back to projects" data-nl="&larr; Terug naar overzicht">&larr; Back to projects</a>
+      <div class="hero-label" data-en="// Solo project &mdash; 2025" data-nl="// Solo project &mdash; 2025">// Solo project &mdash; 2025</div>
       <h1>Real-Time<br><span class="page-title-accent">Mask Detection</span></h1>
-      <div class="project-meta">
+      <div class="meta-row">
         <div class="meta-item">
-          <span class="meta-label">Mijn rol</span>
-          <span class="meta-value">Solo , volledig zelfgebouwd</span>
+          <span class="meta-label" data-en="My role" data-nl="Mijn rol">My role</span>
+          <span class="meta-value" data-en="Solo, fully self-built" data-nl="Solo, volledig zelfgebouwd">Solo, fully self-built</span>
         </div>
         <div class="meta-item">
-          <span class="meta-label">Type</span>
+          <span class="meta-label" data-en="Type" data-nl="Type">Type</span>
           <span class="meta-value">Computer Vision / ML</span>
         </div>
         <div class="meta-item">
@@ -44,216 +44,189 @@
         </div>
         <div class="meta-item">
           <span class="meta-label">Dataset</span>
-          <span class="meta-value">14.535 afbeeldingen</span>
+          <span class="meta-value" data-en="14,535 images" data-nl="14.535 afbeeldingen">14,535 images</span>
         </div>
       </div>
     </div>
   </section>
 
   <div class="container">
-    <div class="project-content">
+    <div class="project-layout">
 
       <article class="project-body">
 
-        <h2>Het project</h2>
-        <p>
-          Een realtime systeem dat via een Android-telefoon als webcam herkent of iemand
-          een mondkapje draagt, het fout draagt, of geen mondkapje heeft , drie klassen,
-          96.7% accuracy, volledig van scratch gebouwd zonder voorgetrainde modellen.
+        <h2 data-en="The project" data-nl="Het project">The project</h2>
+        <p data-en="A real-time system that uses an Android phone as a webcam to detect whether someone is wearing a face mask, wearing it incorrectly, or not wearing one at all. Three classes, 96.7% accuracy, fully built from scratch without pre-trained models." data-nl="Een realtime systeem dat via een Android-telefoon als webcam herkent of iemand een mondkapje draagt, het fout draagt, of geen mondkapje heeft. Drie klassen, 96.7% accuracy, volledig van scratch gebouwd zonder voorgetrainde modellen.">
+          A real-time system that uses an Android phone as a webcam to detect whether someone is wearing a face mask, wearing it incorrectly, or not wearing one at all. Three classes, 96.7% accuracy, fully built from scratch without pre-trained models.
         </p>
-        <p>
-          Alles is handmatig geïmplementeerd: elke convolutielaag, elke loss berekening,
-          elke trainingsloop. Geen YOLOv8, geen framework dat de moeilijke delen verbergt.
+        <p data-en="Everything is manually implemented: every convolution layer, every loss calculation, every training loop. No YOLOv8, no framework hiding the hard parts." data-nl="Alles is handmatig geïmplementeerd: elke convolutielaag, elke loss berekening, elke trainingsloop. Geen YOLOv8, geen framework dat de moeilijke delen verbergt.">
+          Everything is manually implemented: every convolution layer, every loss calculation, every training loop. No YOLOv8, no framework hiding the hard parts.
         </p>
 
         <a href="dark-tech.html" style="display:flex;align-items:center;gap:1rem;padding:1rem;border:1px solid var(--border);border-radius:8px;background:var(--surface);text-decoration:none;color:inherit;margin-bottom:2rem;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--border)'">
           <div style="flex:1;">
-            <div style="font-family:var(--mono);font-size:0.7rem;color:var(--accent);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.3rem;">Onderdeel van</div>
-            <div style="font-weight:600;">Dark Tech Studio , Flush the AI</div>
+            <div style="font-family:var(--mono);font-size:0.7rem;color:var(--accent);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.3rem;" data-en="Part of" data-nl="Onderdeel van">Part of</div>
+            <div style="font-weight:600;" data-en="Dark Tech Studio &mdash; Flush the AI" data-nl="Dark Tech Studio &mdash; Flush the AI">Dark Tech Studio &mdash; Flush the AI</div>
           </div>
           <span style="color:var(--text-muted);">&#8594;</span>
         </a>
 
-        <h2>De pipeline</h2>
+        <h2 data-en="The pipeline" data-nl="De pipeline">The pipeline</h2>
         <div class="pipeline">
           <div class="pipeline-step">
-            <div class="step-icon">📱</div>
+            <div class="step-icon" style="font-family:var(--mono);font-size:0.7rem;color:var(--accent);">01</div>
             <div class="step-info">
               <strong>IP Webcam (Android)</strong>
-              <span>JPEG-frames ophalen via HTTP</span>
+              <span data-en="Fetch JPEG frames via HTTP" data-nl="JPEG-frames ophalen via HTTP">Fetch JPEG frames via HTTP</span>
             </div>
           </div>
           <div class="pipeline-step">
-            <div class="step-icon">👤</div>
+            <div class="step-icon" style="font-family:var(--mono);font-size:0.7rem;color:var(--accent);">02</div>
             <div class="step-info">
               <strong>Face detection</strong>
-              <span>OpenCV Haar Cascade , gezicht uitsnijden</span>
+              <span data-en="OpenCV Haar Cascade &mdash; crop face" data-nl="OpenCV Haar Cascade &mdash; gezicht uitsnijden">OpenCV Haar Cascade &mdash; crop face</span>
             </div>
           </div>
           <div class="pipeline-step">
-            <div class="step-icon">🔢</div>
+            <div class="step-icon" style="font-family:var(--mono);font-size:0.7rem;color:var(--accent);">03</div>
             <div class="step-info">
               <strong>Preprocessing</strong>
-              <span>Crop → resize 64×64 → tensor → ImageNet-normalisatie</span>
+              <span>Crop &rarr; resize 64&times;64 &rarr; tensor &rarr; ImageNet normalization</span>
             </div>
           </div>
           <div class="pipeline-step">
-            <div class="step-icon">🧠</div>
+            <div class="step-icon" style="font-family:var(--mono);font-size:0.7rem;color:var(--accent);">04</div>
             <div class="step-info">
-              <strong>CNN inference op GPU</strong>
-              <span>Zelfgebouwd netwerk , RTX 4050, CUDA</span>
+              <strong data-en="CNN inference on GPU" data-nl="CNN inference op GPU">CNN inference on GPU</strong>
+              <span data-en="Self-built network &mdash; RTX 4050, CUDA" data-nl="Zelfgebouwd netwerk &mdash; RTX 4050, CUDA">Self-built network &mdash; RTX 4050, CUDA</span>
             </div>
           </div>
           <div class="pipeline-step">
-            <div class="step-icon">✅</div>
+            <div class="step-icon" style="font-family:var(--mono);font-size:0.7rem;color:var(--accent);">05</div>
             <div class="step-info">
               <strong>Realtime output</strong>
-              <span>With mask / Without mask / Incorrect , label + confidence op frame</span>
+              <span>With mask / Without mask / Incorrect &mdash; label + confidence</span>
             </div>
           </div>
         </div>
 
-        <h2>Resultaat</h2>
+        <h2 data-en="Result" data-nl="Resultaat">Result</h2>
         <div class="gallery" style="grid-template-columns:1fr;">
           <div class="gallery-item">
-            <img src="img/fotoresultaat.png" alt="Resultaat mask detection" />
-            <div class="gallery-label">Realtime detectie , eindresultaat</div>
+            <img src="img/fotoresultaat.png" alt="Mask detection result" />
+            <div class="gallery-label" data-en="Real-time detection &mdash; final result" data-nl="Realtime detectie &mdash; eindresultaat">Real-time detection &mdash; final result</div>
           </div>
         </div>
 
-        <h2>Realtime output</h2>
-        <p>Het systeem in actie , links met mondkapje, rechts zonder.</p>
+        <h2 data-en="Real-time output" data-nl="Realtime output">Real-time output</h2>
+        <p data-en="The system in action &mdash; left with mask, right without." data-nl="Het systeem in actie &mdash; links met mondkapje, rechts zonder.">The system in action &mdash; left with mask, right without.</p>
         <div class="gallery">
           <div class="gallery-item">
-            <img src="img/mondkapje.png" alt="With mask detectie" />
-            <div class="gallery-label">With mask , correct gedragen</div>
+            <img src="img/mondkapje.png" alt="With mask detection" />
+            <div class="gallery-label" data-en="With mask &mdash; correctly worn" data-nl="With mask &mdash; correct gedragen">With mask &mdash; correctly worn</div>
           </div>
           <div class="gallery-item">
-            <img src="img/nomask.png" alt="No mask detectie" />
-            <div class="gallery-label">Without mask , geen mondkapje</div>
+            <img src="img/nomask.png" alt="No mask detection" />
+            <div class="gallery-label" data-en="Without mask &mdash; no face mask" data-nl="Without mask &mdash; geen mondkapje">Without mask &mdash; no face mask</div>
           </div>
         </div>
 
-        <h2>Trainingsresultaten</h2>
-        <p>Van 74% accuracy in epoch 1 naar 96.7% in epoch 27 , over 30 epochs op een RTX 4050.</p>
+        <h2 data-en="Training results" data-nl="Trainingsresultaten">Training results</h2>
+        <p data-en="From 74% accuracy in epoch 1 to 96.7% in epoch 27 &mdash; over 30 epochs on an RTX 4050." data-nl="Van 74% accuracy in epoch 1 naar 96.7% in epoch 27 &mdash; over 30 epochs op een RTX 4050.">From 74% accuracy in epoch 1 to 96.7% in epoch 27 &mdash; over 30 epochs on an RTX 4050.</p>
 
         <div class="gallery" style="grid-template-columns:1fr;">
           <div class="gallery-item">
-            <img src="img/foto1resultaatCNN.webp" alt="Training start , dataset info en epoch 1" />
-            <div class="gallery-label">Dataset laden &amp; start training , epoch 1 (74.0% → 86.6%)</div>
+            <img src="img/foto1resultaatCNN.webp" alt="Training start" />
+            <div class="gallery-label" data-en="Dataset loading &amp; training start &mdash; epoch 1 (74.0% &rarr; 86.6%)" data-nl="Dataset laden &amp; start training &mdash; epoch 1 (74.0% &rarr; 86.6%)">Dataset loading &amp; training start &mdash; epoch 1 (74.0% &rarr; 86.6%)</div>
           </div>
           <div class="gallery-item">
-            <img src="img/foto2resultaattCNN.webp" alt="Trainingsverloop epochs 1-26" />
-            <div class="gallery-label">Trainingsverloop , epochs 1–26, accuracy stijgt naar 96.2%</div>
+            <img src="img/foto2resultaattCNN.webp" alt="Training progress" />
+            <div class="gallery-label" data-en="Training progress &mdash; epochs 1&ndash;26, accuracy rises to 96.2%" data-nl="Trainingsverloop &mdash; epochs 1&ndash;26, accuracy stijgt naar 96.2%">Training progress &mdash; epochs 1&ndash;26, accuracy rises to 96.2%</div>
           </div>
           <div class="gallery-item">
-            <img src="img/foto3resultaatCNN.webp" alt="Finale epochs en beste model 96.7%" />
-            <div class="gallery-label">Finale epochs , beste model opgeslagen op 96.7% val accuracy</div>
+            <img src="img/foto3resultaatCNN.webp" alt="Final epochs" />
+            <div class="gallery-label" data-en="Final epochs &mdash; best model saved at 96.7% val accuracy" data-nl="Finale epochs &mdash; beste model opgeslagen op 96.7% val accuracy">Final epochs &mdash; best model saved at 96.7% val accuracy</div>
           </div>
         </div>
 
-        <h2>Wat maakt dit technisch zwaar</h2>
+        <h2 data-en="What makes this technically challenging" data-nl="Wat maakt dit technisch zwaar">What makes this technically challenging</h2>
 
-        <p><strong>Twee complete systemen gebouwd, bewust gekozen welke te gebruiken</strong></p>
-        <p>
-          Eerst een YOLO-stijl objectdetector gebouwd van scratch , grid-gebaseerde detectie,
-          drie-component loss, NMS , en ontdekt dat die aanpak 10&times; meer data nodig heeft
-          dan beschikbaar was. Vervolgens bewust overgestapt op face cascade + classifier, wat
-          met 14.535 afbeeldingen wél generaliseerde.
+        <p><strong data-en="Two complete systems built, deliberately chose which to use" data-nl="Twee complete systemen gebouwd, bewust gekozen welke te gebruiken">Two complete systems built, deliberately chose which to use</strong></p>
+        <p data-en="First built a YOLO-style object detector from scratch &mdash; grid-based detection, three-component loss, NMS &mdash; and discovered that approach needs 10x more data than was available. Deliberately switched to face cascade + classifier, which with 14,535 images did generalise." data-nl="Eerst een YOLO-stijl objectdetector gebouwd van scratch, grid-gebaseerde detectie, drie-component loss, NMS, en ontdekt dat die aanpak 10x meer data nodig heeft dan beschikbaar was. Vervolgens bewust overgestapt op face cascade + classifier, wat met 14.535 afbeeldingen wél generaliseerde.">
+          First built a YOLO-style object detector from scratch &mdash; grid-based detection, three-component loss, NMS &mdash; and discovered that approach needs 10x more data than was available. Deliberately switched to face cascade + classifier, which with 14,535 images did generalise.
         </p>
 
-        <p><strong>YOLO-stijl detection loss van scratch geïmplementeerd</strong></p>
-        <p>
-          Objectness loss, class loss en box regression loss als aparte componenten, inclusief
-          de sqrt-trick voor kleine bounding boxes en gewogen &lambda;-termen zoals in het
-          originele YOLO-paper. Normaal verborgen achter een library.
+        <p><strong data-en="YOLO-style detection loss implemented from scratch" data-nl="YOLO-stijl detection loss van scratch geïmplementeerd">YOLO-style detection loss implemented from scratch</strong></p>
+        <p data-en="Objectness loss, class loss and box regression loss as separate components, including the sqrt-trick for small bounding boxes and weighted lambda terms as in the original YOLO paper. Normally hidden behind a library." data-nl="Objectness loss, class loss en box regression loss als aparte componenten, inclusief de sqrt-trick voor kleine bounding boxes en gewogen lambda-termen zoals in het originele YOLO-paper. Normaal verborgen achter een library.">
+          Objectness loss, class loss and box regression loss as separate components, including the sqrt-trick for small bounding boxes and weighted &lambda;-terms as in the original YOLO paper. Normally hidden behind a library.
         </p>
 
-        <p><strong>Grid-based objectdetectie</strong></p>
-        <p>
-          YOLO-annotaties omzetten naar een [8&times;8&times;6] grid tensor: cel-toewijzing,
-          genormaliseerde offset-coördinaten, multi-object handling per cell. Dit is hoe YOLO
-          intern werkt.
+        <p><strong data-en="Non-Maximum Suppression written manually" data-nl="Non-Maximum Suppression handmatig uitgeschreven">Non-Maximum Suppression written manually</strong></p>
+        <p data-en="IoU calculation, confidence threshold and overlap filtering fully self-written &mdash; sits behind a single function call in most frameworks." data-nl="IoU-berekening, confidence-drempel en overlap-filtering volledig zelfgeschreven, zit in de meeste frameworks achter één functieaanroep.">
+          IoU calculation, confidence threshold and overlap filtering fully self-written &mdash; sits behind a single function call in most frameworks.
         </p>
 
-        <p><strong>Non-Maximum Suppression handmatig uitgeschreven</strong></p>
-        <p>
-          IoU-berekening, confidence-drempel en overlap-filtering volledig zelfgeschreven ,
-          zit in de meeste frameworks achter één functieaanroep.
+        <p><strong data-en="Domain shift identified and resolved" data-nl="Domain shift herkend en opgelost">Domain shift identified and resolved</strong></p>
+        <p data-en="The first dataset (Asian motorcycle helmets) reached 81% accuracy in evaluation but did not work in practice. Diagnosing the problem as domain shift rather than just 'it doesn't work'." data-nl="De eerste dataset (Aziatische motorhelmen) haalde 81% accuracy in evaluatie maar werkte niet in de praktijk. Het probleem zelf diagnosticeren als domain shift, en niet alleen 'het werkt niet' constateren.">
+          The first dataset (Asian motorcycle helmets) reached 81% accuracy in evaluation but did not work in practice. Diagnosing the problem as domain shift rather than just 'it doesn't work'.
         </p>
 
-        <p><strong>Domain shift herkend en opgelost</strong></p>
-        <p>
-          De eerste dataset (Aziatische motorhelmen) haalde 81% accuracy in evaluatie maar
-          werkte niet in de praktijk. Het probleem zelf diagnosticeren als domain shift,
-          en niet alleen "het werkt niet" constateren.
-        </p>
-
-        <div class="callout" style="border-color:rgba(108,99,255,0.3);background:rgba(108,99,255,0.06);">
-          <div class="callout-icon">🏆</div>
+        <div class="callout">
           <p>
-            <strong>96.7% accuracy</strong> op 14.535 afbeeldingen met een netwerk van
-            101.858 parameters , volledig zelfgebouwd, elke laag, elke loss, elke
-            trainingsloop handmatig geïmplementeerd.
+            <strong>96.7% accuracy</strong>
+            <span data-en="on 14,535 images with a network of 101,858 parameters &mdash; fully self-built, every layer, every loss, every training loop manually implemented." data-nl="op 14.535 afbeeldingen met een netwerk van 101.858 parameters &mdash; volledig zelfgebouwd, elke laag, elke loss, elke trainingsloop handmatig geïmplementeerd.">on 14,535 images with a network of 101,858 parameters &mdash; fully self-built, every layer, every loss, every training loop manually implemented.</span>
           </p>
         </div>
 
-        <h2>Uitdagingen</h2>
+        <h2 data-en="What I learned" data-nl="Wat ik heb geleerd">What I learned</h2>
         <ul>
-          <li>Laptop webcam niet toegankelijk via OpenCV op Windows , opgelost via IP Webcam stream over wifi.</li>
-          <li>Eerste datasets hadden domain shift , Aziatische helmen generaliseerden niet naar eigen situatie.</li>
-          <li>Zelfgebouwde YOLO-detector overfitte bij 397 afbeeldingen , bewust overgestapt op classifier aanpak.</li>
-        </ul>
-
-        <h2>Wat ik heb geleerd</h2>
-        <ul>
-          <li>Hoe convoluties, pooling en BatchNorm samenwerken in een CNN.</li>
-          <li>Hoe backpropagation, CrossEntropyLoss en Adam optimizer het netwerk laten leren.</li>
-          <li>Wat overfitting is en hoe je het voorkomt , en wanneer je architectuurkeuzes aanpast aan je data.</li>
-          <li>Waarom datakwaliteit en diversiteit zwaarder wegen dan modelcomplexiteit.</li>
-          <li>Hoe je een volledige ML pipeline bouwt: data laden → trainen → evalueren → realtime inferentie.</li>
+          <li data-en="How convolutions, pooling and BatchNorm work together in a CNN." data-nl="Hoe convoluties, pooling en BatchNorm samenwerken in een CNN.">How convolutions, pooling and BatchNorm work together in a CNN.</li>
+          <li data-en="How backpropagation, CrossEntropyLoss and Adam optimizer make the network learn." data-nl="Hoe backpropagation, CrossEntropyLoss en Adam optimizer het netwerk laten leren.">How backpropagation, CrossEntropyLoss and Adam optimizer make the network learn.</li>
+          <li data-en="What overfitting is and how to prevent it, and when to adapt architecture choices to your data." data-nl="Wat overfitting is en hoe je het voorkomt, en wanneer je architectuurkeuzes aanpast aan je data.">What overfitting is and how to prevent it, and when to adapt architecture choices to your data.</li>
+          <li data-en="Why data quality and diversity weigh heavier than model complexity." data-nl="Waarom datakwaliteit en diversiteit zwaarder wegen dan modelcomplexiteit.">Why data quality and diversity weigh heavier than model complexity.</li>
+          <li data-en="How to build a complete ML pipeline: load data &rarr; train &rarr; evaluate &rarr; real-time inference." data-nl="Hoe je een volledige ML pipeline bouwt: data laden &rarr; trainen &rarr; evalueren &rarr; realtime inferentie.">How to build a complete ML pipeline: load data &rarr; train &rarr; evaluate &rarr; real-time inference.</li>
         </ul>
 
       </article>
 
       <aside class="project-sidebar">
 
-        <div class="sidebar-card">
-          <h4>Tech stack</h4>
-          <ul class="tech-stack-list">
-            <li><span class="tech-icon">🐍</span><span class="tech-name">Python</span></li>
-            <li><span class="tech-icon">🔥</span><span class="tech-name">PyTorch</span><span class="tech-desc">CNN</span></li>
-            <li><span class="tech-icon">⚡</span><span class="tech-name">CUDA</span><span class="tech-desc">RTX 4050</span></li>
-            <li><span class="tech-icon">📷</span><span class="tech-name">OpenCV</span><span class="tech-desc">face detection</span></li>
-            <li><span class="tech-icon">🖼️</span><span class="tech-name">Pillow</span></li>
-            <li><span class="tech-icon">📦</span><span class="tech-name">torchvision</span></li>
-            <li><span class="tech-icon">📱</span><span class="tech-name">IP Webcam</span><span class="tech-desc">Android</span></li>
-            <li><span class="tech-icon">📊</span><span class="tech-name">Kaggle dataset</span><span class="tech-desc">14.535 img</span></li>
+        <div class="sidebar-block">
+          <h4 data-en="Tech stack" data-nl="Tech stack">Tech stack</h4>
+          <ul class="tech-list">
+            <li>Python</li>
+            <li>PyTorch <span>CNN</span></li>
+            <li>CUDA <span>RTX 4050</span></li>
+            <li>OpenCV <span data-en="face detection" data-nl="gezichtsdetectie">face detection</span></li>
+            <li>Pillow</li>
+            <li>torchvision</li>
+            <li>IP Webcam <span>Android</span></li>
+            <li>Kaggle dataset <span data-en="14,535 img" data-nl="14.535 img">14,535 img</span></li>
           </ul>
         </div>
 
-        <div class="sidebar-card">
-          <h4>Skills aangetoond</h4>
-          <div class="skill-badges">
-            <span class="skill-badge">CNN from scratch</span>
-            <span class="skill-badge">YOLO loss</span>
-            <span class="skill-badge">NMS</span>
-            <span class="skill-badge">Backpropagation</span>
-            <span class="skill-badge">Data augmentatie</span>
-            <span class="skill-badge">Domain shift</span>
-            <span class="skill-badge">GPU inference</span>
-            <span class="skill-badge">Realtime CV</span>
+        <div class="sidebar-block">
+          <h4 data-en="Skills demonstrated" data-nl="Skills aangetoond">Skills demonstrated</h4>
+          <div class="badge-list">
+            <span class="badge">CNN from scratch</span>
+            <span class="badge">YOLO loss</span>
+            <span class="badge">NMS</span>
+            <span class="badge">Backpropagation</span>
+            <span class="badge" data-en="Data augmentation" data-nl="Data augmentatie">Data augmentation</span>
+            <span class="badge">Domain shift</span>
+            <span class="badge">GPU inference</span>
+            <span class="badge">Realtime CV</span>
           </div>
         </div>
 
-        <div class="sidebar-card">
-          <h4>Key takeaways</h4>
+        <div class="sidebar-block">
+          <h4 data-en="Key takeaways" data-nl="Voornaamste lessen">Key takeaways</h4>
           <ul class="lesson-list">
-            <li>CNN architectuur begrijpen en bouwen</li>
-            <li>YOLO detection loss implementeren</li>
-            <li>NMS zelfschrijven</li>
-            <li>Domain shift diagnosticeren</li>
-            <li>Volledige ML pipeline van data tot inferentie</li>
+            <li data-en="Understand and build CNN architecture" data-nl="CNN architectuur begrijpen en bouwen">Understand and build CNN architecture</li>
+            <li data-en="Implement YOLO detection loss" data-nl="YOLO detection loss implementeren">Implement YOLO detection loss</li>
+            <li data-en="Write NMS manually" data-nl="NMS zelfschrijven">Write NMS manually</li>
+            <li data-en="Diagnose domain shift" data-nl="Domain shift diagnosticeren">Diagnose domain shift</li>
+            <li data-en="Full ML pipeline from data to inference" data-nl="Volledige ML pipeline van data tot inferentie">Full ML pipeline from data to inference</li>
           </ul>
         </div>
 
@@ -262,8 +235,9 @@
   </div>
 
   <footer>
-    <div class="container">
-      <p>Built by Daan Donders &mdash; 2025</p>
+    <div class="container" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;">
+      <p>Daan Donders &mdash; daandonderss@gmail.com</p>
+      <a href="https://www.linkedin.com/in/daan-donders-1237b7162/" target="_blank" style="font-family:var(--mono);font-size:0.78rem;color:var(--text-muted);transition:color 0.2s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-muted)'">LinkedIn</a>
     </div>
   </footer>
 
